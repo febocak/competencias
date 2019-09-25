@@ -1,0 +1,22 @@
+<app-spinner [loading$]="loading$" ></app-spinner>
+
+<ng-container [ngSwitch]="modulo">
+  <app-navbar-admin *ngSwitchCase = "'Administración'"
+    [usuario]="usuario$ | async" (emitLogout)="onLogout()" >
+  </app-navbar-admin>
+
+  <app-navbar-inscripcion *ngSwitchCase = "'Inscripciones'"
+    [usuario]="usuario$ | async" (emitLogout)="onLogout()" >
+  </app-navbar-inscripcion>
+
+  <app-navbar-competencia *ngSwitchCase = "'Competencias'"
+    [usuario]="usuario$ | async" (emitLogout)="onLogout()" >
+  </app-navbar-competencia>
+
+</ng-container>
+
+
+  
+<app-message></app-message>
+  
+<router-outlet></router-outlet>
