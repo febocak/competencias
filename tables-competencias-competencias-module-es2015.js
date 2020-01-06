@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\n  <div class=\"col-sm-12 col-md-8 col-lg-6 mx-auto\">\n\n    <div class=\"card mt-3\">\n      <div class=\"card-header\" [ngClass]=\"templateData.cardHeaderStyle\">\n        {{ templateData.titulo + \" Compentencia\" }}\n        \n      </div>\n\n      <div class=\"card-body\">\n        <form [formGroup]=\"miForm\" (ngSubmit)=\"onSubmit(submitBtn)\">\n\n          <div class=\"row\">\n            <div class=\"col-6\">\n              <div class=\"form-group\">\n                <label for=\"desde\" class=\"control-label\"> Desde </label>\n                <input type=\"date\" formControlName=\"desde\" [readonly]=\"templateData.titulo==='Eliminar'\"\n                  [class.is-invalid]=\"desde.invalid && desde.touched\" class=\"form-control\" />\n                <small class=\"text-danger\" [class.d-none]=\"desde.untouched || !desde.hasError('required')\">El campo desde es requerido</small>\n              </div>\n\n            </div>\n\n            <div class=\"col-6\">\n              <div class=\"form-group\">\n                <label for=\"hasta\" class=\"control-label\"> hasta </label>\n                <input type=\"date\" formControlName=\"hasta\" [readonly]=\"templateData.titulo==='Eliminar'\"\n                  [class.is-invalid]=\"hasta.invalid && hasta.touched\" class=\"form-control\" />\n                <small class=\"text-danger\" [class.d-none]=\"hasta.untouched || !hasta.hasError('required')\">El campo hasta es requerido</small>\n              </div>\n\n            </div>\n\n          </div>\n\n              <div class=\"form-group\">\n                <label for=\"competencia\" class=\"control-label\"> Descripción </label>\n                <input type=\"text\" formControlName=\"competencia\" [readonly]=\"templateData.titulo==='Eliminar'\" required maxlength=\"80\"\n                  [class.is-invalid]=\"competencia.invalid && competencia.touched\" class=\"form-control\" />\n                <small class=\"text-danger\" [class.d-none]=\"competencia.untouched || !competencia.hasError('required')\">La descripción es requerida</small>\n                <small class=\"text-danger\" [class.d-none]=\"competencia.untouched || !competencia.hasError('minlength')\">La longitud mínima es 2</small>\n              </div>\n\n          <div class=\"form-group\">\n            <label for=\"club\" class=\"control-label\"> Club </label>\n            <select formControlName=\"club\" required\n              [class.is-invalid]=\"club.invalid && club.touched\" class=\"custom-select\">\n              <option value=\"club\"></option>\n              <option [value]=\"registro.nombre\" *ngFor=\"let registro of tblClubes\" >{{ registro.nombre }}</option>\n            </select>\n            <small class=\"text-danger\" [class.d-none]=\"club.untouched || !club.hasError('required')\">El club es requerido</small>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-6\">\n              <button [disabled]=\"!miForm.valid\" #submitBtn\n                [ngClass]=\"templateData.titulo==='Eliminar' ? 'btn-danger' : 'btn-primary'\"\n                type=\"submit\" class=\"btn btn-block\">\n                {{ templateData.titulo === 'Eliminar' ? 'Eliminar' : 'Aceptar' }}\n              </button>\n            </div>\n            <div class=\"col-6\">\n              <button type=\"button\" class=\"btn btn-secondary btn-block\" (click)=\"goBack()\">\n                Cancelar\n              </button>\n            </div>\n          </div>\n\n        </form>\n      </div>\n    </div>\n\n  </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\r\n  <div class=\"col-sm-12 col-md-8 col-lg-6 mx-auto\">\r\n\r\n    <div class=\"card mt-3\">\r\n      <div class=\"card-header\" [ngClass]=\"templateData.cardHeaderStyle\">\r\n        {{ templateData.titulo + \" Compentencia\" }}\r\n        \r\n      </div>\r\n\r\n      <div class=\"card-body\">\r\n        <form [formGroup]=\"miForm\" (ngSubmit)=\"onSubmit(submitBtn)\">\r\n\r\n          <div class=\"row\">\r\n            <div class=\"col-6\">\r\n              <div class=\"form-group\">\r\n                <label for=\"desde\" class=\"control-label\"> Desde </label>\r\n                <input type=\"date\" formControlName=\"desde\" [readonly]=\"templateData.titulo==='Eliminar'\"\r\n                  [class.is-invalid]=\"desde.invalid && desde.touched\" class=\"form-control\" />\r\n                <small class=\"text-danger\" [class.d-none]=\"desde.untouched || !desde.hasError('required')\">El campo desde es requerido</small>\r\n              </div>\r\n\r\n            </div>\r\n\r\n            <div class=\"col-6\">\r\n              <div class=\"form-group\">\r\n                <label for=\"hasta\" class=\"control-label\"> hasta </label>\r\n                <input type=\"date\" formControlName=\"hasta\" [readonly]=\"templateData.titulo==='Eliminar'\"\r\n                  [class.is-invalid]=\"hasta.invalid && hasta.touched\" class=\"form-control\" />\r\n                <small class=\"text-danger\" [class.d-none]=\"hasta.untouched || !hasta.hasError('required')\">El campo hasta es requerido</small>\r\n              </div>\r\n\r\n            </div>\r\n\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n            <label for=\"competencia\" class=\"control-label\"> Descripción </label>\r\n            <input type=\"text\" formControlName=\"competencia\" [readonly]=\"templateData.titulo==='Eliminar'\" required maxlength=\"80\"\r\n              [class.is-invalid]=\"competencia.invalid && competencia.touched\" class=\"form-control\" />\r\n            <small class=\"text-danger\" [class.d-none]=\"competencia.untouched || !competencia.hasError('required')\">La descripción es requerida</small>\r\n            <small class=\"text-danger\" [class.d-none]=\"competencia.untouched || !competencia.hasError('minlength')\">La longitud mínima es 2</small>\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n            <label for=\"tipoDeCompetencia\" class=\"control-label\"> Tipo </label>\r\n            <select formControlName=\"tipoDeCompetencia\" required\r\n              [class.is-invalid]=\"tipoDeCompetencia.invalid && tipoDeCompetencia.touched\" class=\"custom-select\">\r\n              <option value=\"tipoDeCompetencia\"></option>\r\n              <option [value]=\"registro.tipo\" *ngFor=\"let registro of tblTipos\" >{{ registro.tipo }}</option>\r\n            </select>\r\n            <small class=\"text-danger\" [class.d-none]=\"tipoDeCompetencia.untouched || !tipoDeCompetencia.hasError('required')\">El tipo es requerido</small>\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n            <label for=\"club\" class=\"control-label\"> Club </label>\r\n            <select formControlName=\"club\" required\r\n              [class.is-invalid]=\"club.invalid && club.touched\" class=\"custom-select\">\r\n              <option value=\"club\"></option>\r\n              <option [value]=\"registro.nombre\" *ngFor=\"let registro of tblClubes\" >{{ registro.nombre }}</option>\r\n            </select>\r\n            <small class=\"text-danger\" [class.d-none]=\"club.untouched || !club.hasError('required')\">El club es requerido</small>\r\n          </div>\r\n\r\n          <div class=\"row\">\r\n            <div class=\"col-6\">\r\n              <button [disabled]=\"!miForm.valid\" #submitBtn\r\n                [ngClass]=\"templateData.titulo==='Eliminar' ? 'btn-danger' : 'btn-primary'\"\r\n                type=\"submit\" class=\"btn btn-block\">\r\n                {{ templateData.titulo === 'Eliminar' ? 'Eliminar' : 'Aceptar' }}\r\n              </button>\r\n            </div>\r\n            <div class=\"col-6\">\r\n              <button type=\"button\" class=\"btn btn-secondary btn-block\" (click)=\"goBack()\">\r\n                Cancelar\r\n              </button>\r\n            </div>\r\n          </div>\r\n\r\n        </form>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>");
 
 /***/ }),
 
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card mt-3\">\n  <div class=\"card-header d-flex\">\n    Competencias\n    <a routerLink=\"/competencias/add\" class=\"text-primary ml-auto\">\n      <i class=\"fa fa-plus-circle fa-2x\"></i>\n    </a>\n  </div>\n</div>\n\n<table class=\"table table-bordered table-hover\">\n  <thead>\n    <tr>\n      <th> Desde </th>\n      <th> Hasta </th>\n      <th> Competencia </th>\n      <th> Club </th>\n      <th> </th>\n      <th> </th>\n    </tr>\n  </thead>\n\n  <tbody>\n    <tr *ngFor=\"let registro of tabla\">\n      <td routerLink=\"/competencias/edit/{{registro.id}}\"> {{ registro.desde }} </td>\n      <td routerLink=\"/competencias/edit/{{registro.id}}\"> {{ registro.hasta }} </td>\n      <td routerLink=\"/competencias/edit/{{registro.id}}\"> {{ registro.competencia }} </td>\n      <td routerLink=\"/competencias/edit/{{registro.id}}\"> {{ registro.club }} </td>\n      <td class=\"text-center\">\n        <a routerLink=\"/distancias/{{registro.id}}\" class=\"text-primary\">\n          <i class=\"fa fa-cogs fa-2x\"></i>\n        </a>\n      </td>\n      <td class=\"text-center\">\n        <a routerLink=\"/competencias/delete/{{registro.id}}\" class=\"text-danger\">\n          <i class=\"fa fa-minus-circle fa-2x\"></i>\n        </a>\n      </td>\n    </tr>\n  </tbody>\n\n</table>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card mt-3\">\r\n  <div class=\"card-header d-flex\">\r\n    Competencias\r\n    <a routerLink=\"/competencias/add\" class=\"text-primary ml-auto\">\r\n      <i class=\"fa fa-plus-circle fa-2x\"></i>\r\n    </a>\r\n  </div>\r\n</div>\r\n\r\n<table class=\"table table-bordered table-hover\">\r\n  <thead>\r\n    <tr>\r\n      <th> Desde </th>\r\n      <th> Hasta </th>\r\n      <th> Competencia </th>\r\n      <th> Tipo </th>\r\n      <th> Club </th>\r\n      <th> </th>\r\n    </tr>\r\n  </thead>\r\n\r\n  <tbody>\r\n    <tr *ngFor=\"let registro of tabla\">\r\n      <td routerLink=\"/competencias/edit/{{registro.id}}\"> {{ registro.desde | date :'dd-MMM-yyyy' }} </td>\r\n      <td routerLink=\"/competencias/edit/{{registro.id}}\"> {{ registro.hasta | date :'dd-MMM-yyyy' }} </td>\r\n      <td routerLink=\"/competencias/edit/{{registro.id}}\"> {{ registro.competencia }} </td>\r\n      <td routerLink=\"/competencias/edit/{{registro.id}}\"> {{ registro.tipoDeCompetencia }} </td>\r\n      <td routerLink=\"/competencias/edit/{{registro.id}}\"> {{ registro.club }} </td>\r\n      <td class=\"text-center\">\r\n        <a routerLink=\"/competencias/delete/{{registro.id}}\" class=\"text-danger\">\r\n          <i class=\"fa fa-minus-circle fa-2x\"></i>\r\n        </a>\r\n      </td>\r\n    </tr>\r\n  </tbody>\r\n\r\n</table>");
 
 /***/ }),
 
@@ -50,7 +50,7 @@ let CompetenciasFormResolver = class CompetenciasFormResolver {
     }
     resolve(route, state) {
         const id = route.paramMap.get('id');
-        const allData$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])(this.crudService.getRecord$('competencias', id), this.crudService.getAllRecords$('clubes', 'nombre'));
+        const allData$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])(this.crudService.getRecord$('competencias', id), this.crudService.getAllRecords$('clubes', 'nombre'), this.crudService.getAllRecords$('tipos-de-competencias'), this.crudService.getAllRecords$('competencias'));
         return allData$;
     }
 };
@@ -203,6 +203,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _core_message_message_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/message/message.service */ "./src/app/core/message/message.service.ts");
 /* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+/* harmony import */ var _services_array_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @services/array.service */ "./src/app/services/array.service.ts");
+
 
 
 
@@ -211,18 +213,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let CompetenciasFormComponent = class CompetenciasFormComponent {
-    constructor(crudService, fb, msg, location, actRoute, router) {
+    constructor(crudService, fb, msg, location, actRoute, router, arrayService) {
         this.crudService = crudService;
         this.fb = fb;
         this.msg = msg;
         this.location = location;
         this.actRoute = actRoute;
         this.router = router;
+        this.arrayService = arrayService;
         this.templateData = { titulo: '', cardHeaderStyle: '', id: '' };
     }
     ngOnInit() {
         this.msg.clearMessages();
         this.tblClubes = this.actRoute.snapshot.data['competenciaData'][1];
+        this.tblTipos = this.actRoute.snapshot.data['competenciaData'][2];
         const action = this.actRoute.snapshot.paramMap.get('action');
         this.templateData.titulo = this.getTitle(action);
         this.templateData.cardHeaderStyle = this.getClassHeader(action);
@@ -237,6 +241,7 @@ let CompetenciasFormComponent = class CompetenciasFormComponent {
             desde: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             hasta: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             competencia: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)]],
+            tipoDeCompetencia: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             club: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]]
         });
     }
@@ -245,6 +250,7 @@ let CompetenciasFormComponent = class CompetenciasFormComponent {
         this.miForm.patchValue(record);
         if (this.templateData.titulo === 'Eliminar') {
             this.miForm.controls.club.disable();
+            this.miForm.controls.tipoDeCompetencia.disable();
         }
     }
     get desde() {
@@ -256,12 +262,19 @@ let CompetenciasFormComponent = class CompetenciasFormComponent {
     get competencia() {
         return this.miForm.get('competencia');
     }
+    get tipoDeCompetencia() {
+        return this.miForm.get('tipoDeCompetencia');
+    }
     get club() {
         return this.miForm.get('club');
     }
     onSubmit(submitBtn) {
         submitBtn.disabled = true;
         const record = Object.assign({ id: this.templateData.id }, this.miForm.value);
+        if (this.templateData.titulo !== 'Eliminar' && !this.validations(record)) {
+            submitBtn.disabled = false;
+            return;
+        }
         switch (this.templateData.titulo) {
             case 'Agregar':
                 this.aceptarAgregar(record);
@@ -294,6 +307,33 @@ let CompetenciasFormComponent = class CompetenciasFormComponent {
         const objStyle = { add: 'bg-primary', edit: 'bg-warning', delete: 'bg-danger' };
         return objStyle[action];
     }
+    validations(record) {
+        const tabla = this.actRoute.snapshot.data['competenciaData'][3];
+        const errorMessages = [];
+        errorMessages.push('Ya hay otro registro con el mismo valor para el campo desde');
+        errorMessages.push('Ya hay otro registro con el mismo valor para el campo hasta');
+        errorMessages.push('Ya hay otro registro con el mismo valor para el campo descripción');
+        const objSearch = [];
+        objSearch.push({ desde: record.desde });
+        objSearch.push({ hasta: record.hasta });
+        objSearch.push({ competencia: record.competencia });
+        for (let i = 0; i < objSearch.length; i++) {
+            const encontro = this.arrayService.find(tabla, objSearch[i]);
+            if (!!encontro) {
+                if (this.templateData.titulo === 'Agregar') {
+                    this.msg.warning(errorMessages[i]);
+                    return false;
+                }
+                else {
+                    if (record.id !== encontro.id) {
+                        this.msg.warning(errorMessages[i]);
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 };
 CompetenciasFormComponent.ctorParameters = () => [
     { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_6__["CrudService"] },
@@ -301,7 +341,8 @@ CompetenciasFormComponent.ctorParameters = () => [
     { type: _core_message_message_service__WEBPACK_IMPORTED_MODULE_5__["MessageService"] },
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _services_array_service__WEBPACK_IMPORTED_MODULE_7__["ArrayService"] }
 ];
 CompetenciasFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

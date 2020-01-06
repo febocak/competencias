@@ -38,7 +38,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriasFormResolver", function() { return CategoriasFormResolver; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+
 
 
 
@@ -48,11 +50,12 @@ let CategoriasFormResolver = class CategoriasFormResolver {
     }
     resolve(route, state) {
         const id = route.paramMap.get('id');
-        return this.crudService.getRecord$('categorias', id);
+        const allData$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])(this.crudService.getRecord$('categorias', id), this.crudService.getAllRecords$('categorias', 'desde'));
+        return allData$;
     }
 };
 CategoriasFormResolver.ctorParameters = () => [
-    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_2__["CrudService"] }
+    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_3__["CrudService"] }
 ];
 CategoriasFormResolver = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -212,6 +215,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _core_message_message_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/message/message.service */ "./src/app/core/message/message.service.ts");
 /* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+/* harmony import */ var _services_array_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @services/array.service */ "./src/app/services/array.service.ts");
+
 
 
 
@@ -220,13 +225,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let CategoriasFormComponent = class CategoriasFormComponent {
-    constructor(crudService, fb, msg, location, actRoute, router) {
+    constructor(crudService, fb, msg, location, actRoute, router, arrayService) {
         this.crudService = crudService;
         this.fb = fb;
         this.msg = msg;
         this.location = location;
         this.actRoute = actRoute;
         this.router = router;
+        this.arrayService = arrayService;
         this.templateData = { titulo: '', cardHeaderStyle: '', id: '' };
     }
     ngOnInit() {
@@ -249,7 +255,7 @@ let CategoriasFormComponent = class CategoriasFormComponent {
         });
     }
     setFormData() {
-        const record = this.actRoute.snapshot.data['categoriaData'];
+        const record = this.actRoute.snapshot.data['categoriaData'][0];
         this.miForm.patchValue(record);
         if (this.templateData.titulo === 'Eliminar') {
             this.miForm.controls.genero.disable();
@@ -270,6 +276,10 @@ let CategoriasFormComponent = class CategoriasFormComponent {
     onSubmit(submitBtn) {
         submitBtn.disabled = true;
         const record = Object.assign({ id: this.templateData.id }, this.miForm.value);
+        if (this.templateData.titulo !== 'Eliminar' && !this.validations(record)) {
+            submitBtn.disabled = false;
+            return;
+        }
         switch (this.templateData.titulo) {
             case 'Agregar':
                 this.aceptarAgregar(record);
@@ -302,6 +312,31 @@ let CategoriasFormComponent = class CategoriasFormComponent {
         const objStyle = { add: 'bg-primary', edit: 'bg-warning', delete: 'bg-danger' };
         return objStyle[action];
     }
+    validations(record) {
+        const tabla = this.actRoute.snapshot.data['categoriaData'][1];
+        const errorMessages = [];
+        errorMessages.push('Ya hay otro registro con los mismos valores para los campos desde, hasta y genero');
+        errorMessages.push('Ya hay otro registro con la mismas descripción para la categoría');
+        const objSearch = [];
+        objSearch.push({ desde: record.desde, hasta: record.hasta, genero: record.genero });
+        objSearch.push({ categoria: record.categoria });
+        for (let i = 0; i < objSearch.length; i++) {
+            const encontro = this.arrayService.find(tabla, objSearch[i]);
+            if (!!encontro) {
+                if (this.templateData.titulo === 'Agregar') {
+                    this.msg.warning(errorMessages[i]);
+                    return false;
+                }
+                else {
+                    if (record.id !== encontro.id) {
+                        this.msg.warning(errorMessages[i]);
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 };
 CategoriasFormComponent.ctorParameters = () => [
     { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_6__["CrudService"] },
@@ -309,7 +344,8 @@ CategoriasFormComponent.ctorParameters = () => [
     { type: _core_message_message_service__WEBPACK_IMPORTED_MODULE_5__["MessageService"] },
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _services_array_service__WEBPACK_IMPORTED_MODULE_7__["ArrayService"] }
 ];
 CategoriasFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

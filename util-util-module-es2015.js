@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["util-importar-palistas-importar-palistas-module"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["util-util-module"],{
 
 /***/ "./node_modules/print-js/dist/print.js":
 /*!*********************************************!*\
@@ -1150,6 +1150,45 @@ module.exports = __webpack_require__(/*! ./src/index.js */"./src/index.js");
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/util/add-field-to-table/add-field-to-table.component.html":
+/*!*****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/util/add-field-to-table/add-field-to-table.component.html ***!
+  \*****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\r\n  <div class=\"card-header\">\r\n    Agregar campo a una tabla\r\n  </div>\r\n  <div class=\"card-body\">\r\n    <div>\r\n      <p>Este proceso agrega un campo a todos los documentos de una colección. \r\n         Es importante que realice respaldo de los datos antes de realizar este proceso\r\n      </p>\r\n    </div>\r\n    <div class=\"row mt-3\">\r\n      <div class=\"col-3 align-self-end\">\r\n        <label for=\"tabla\" class=\"control-label\"> Nombre de la Tabla </label>\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"nomTabla\"/>\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <label for=\"campo\" class=\"control-label\"> Nombre del campo </label>\r\n      </div>\r\n      <div class=\"col-3\">\r\n        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"nomCampo\"/>\r\n      </div>\r\n    </div>\r\n    \r\n    <div class=\"row mt-3\">\r\n      <div class=\"col-6\">\r\n        <button class=\"btn btn-primary btn-block\" (click)=\"onAddField()\">\r\n          Aceptar\r\n        </button>\r\n      </div>\r\n      <div class=\"col-6\">\r\n        <button class=\"btn btn-secondary btn-block\" (click)=\"goBack()\">\r\n          Cancelar\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/util/backup/backup.component.html":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/util/backup/backup.component.html ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\r\n  <div class=\"col-12\">\r\n\r\n    <div class=\"card\">\r\n      <div class=\"card-header\">\r\n        Respaldar datos\r\n\r\n      </div>\r\n\r\n      <div class=\"card-body\">\r\n\r\n        <div class=\"row\">\r\n          <div class=\"col-12\">\r\n            <h4> {{ mensaje }} </h4>\r\n          </div>\r\n          <div class=\"col-6\">\r\n            <button class=\"btn btn-lg btn-block btn-primary\" [disabled]=\"preparacionStatus > 0\"\r\n              (click)=\"generateDownloadJsonUri()\">\r\n              Procesar\r\n            </button>\r\n          </div>\r\n          <div class=\"col-6\">\r\n            <button class=\"btn btn-lg btn-block btn-primary\" [disabled]=\"preparacionStatus < 2\"\r\n              (click)=\"exportarDatos()\">\r\n              Exportar\r\n            </button>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"row mt-3\">\r\n          <div class=\"col-6 mx-auto\">\r\n            <button class=\"btn btn-block btn-secondary\" (click)=\"goBack()\">\r\n              Cancelar\r\n            </button>\r\n          </div>\r\n        </div>\r\n\r\n        <a #aDownload class=\"btn btn-clear d-none\" title=\"Download JSON\" [href]=\"downloadJsonHref\" download=\"FeBoCaK.json\">\r\n          Link\r\n        </a> \r\n\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/util/copiar-distancias/copiar-distancias.component.html":
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/util/copiar-distancias/copiar-distancias.component.html ***!
+  \***************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\">\r\n  <div class=\"card-header\">\r\n    Copiar distancias\r\n  </div>\r\n  <div class=\"card-body\">\r\n    <table class=\"table table-bordered table-hover\">\r\n      <thead>\r\n        <tr>\r\n          <th> Categoría </th>\r\n          <th> Embarcación </th>\r\n          <th> Distancia </th>\r\n        </tr>\r\n      </thead>\r\n\r\n      <tbody>\r\n        <tr *ngFor=\"let registro of distancias\">\r\n          <td> {{ registro.categoria }} </td>\r\n          <td> {{ registro.embarcacion }} </td>\r\n          <td> {{ registro.distancia }} </td>\r\n        </tr>\r\n      </tbody>\r\n\r\n    </table>\r\n  </div>\r\n  <div class=\"card-footer\">\r\n    <button class=\"btn btn-block btn-primary\"(click)=\"onSubmit(submitBtn)\" #submitBtn>\r\n      Copiar distancias\r\n    </button>\r\n  </div>\r\n</div>\r\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/util/importar-palistas/detalle-club.component.html":
 /*!**********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/util/importar-palistas/detalle-club.component.html ***!
@@ -1172,7 +1211,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\n  <div class=\"col-4\">\n    <div class=\"card mt-3\">\n      <div class=\"card-header\">\n        Importar palistas\n      </div>\n      <div class=\"card-body\">\n\n        <h5>Datos del archivo</h5>\n        <table class=\"table\">\n          <tr>\n            <th>Nombre: </th>\n            <td colspan=\"3\" *ngIf=\"!!file\"> {{ file.name }} </td>\n          </tr>\n          <tr>\n            <th>Fecha: </th>\n            <td *ngIf=\"!!file\"> {{ fecha }} </td>\n            <th>Hora: </th>\n            <td *ngIf=\"!!file\"> {{ hora }} </td>\n          </tr>\n\n          <tr>\n            <th>tipo: </th>\n            <td *ngIf=\"!!file\"> {{ file.type }} </td>\n            <th>tamaño: </th>\n            <td *ngIf=\"!!file\"> {{ file.size }} </td>\n          </tr>\n        </table>\n\n        <label class=\"btn btn-primary btn-block btn-file\"  [class.btn-secondary]=\"fileUrl.value\">\n          <i class=\"fa fa-folder\"> </i> Seleccione el archivo\n          <input #fileUrl type=\"file\" style=\"display: none;\" accept=\".json\" (change)=\"onChange($event)\"\n            [disabled]=\"fileUrl.value\">\n        </label>\n\n        <div class=\"row  mt-2\">\n          <div class=\"col-6\">\n            <button type=\"button\" class=\"btn btn-primary btn-block\" \n              [disabled]=\"!fileUrl.value\" (click)=\"onUpload()\">\n              <i class=\"fa fa-upload\"></i> Importar palistas\n            </button>\n          </div>\n          <div class=\"col-6\">\n            <button type=\"button\" class=\"btn btn-secondary btn-block\" (click)=\"goBack()\">\n              Cancelar\n            </button>\n          </div>\n        </div>\n        \n      </div>\n    </div>\n\n  </div>\n\n  <div class=\"col-8\">\n    <div class=\"card mt-3\">\n\n      <div class=\"card-body\">\n\n        <h5>Resumen</h5>\n        <table class=\"table\" *ngIf=\"!!tblResumen\">\n          <tr *ngFor=\"let linea of tblResumen\">\n            <td (click)=\"showPalistas(linea.tipo)\" class=\"p-1\"> {{ linea.descrip }} </td>\n          </tr>\n        </table>\n\n      </div>\n    </div>\n\n    <router-outlet class=\"mt-3\"></router-outlet>\n\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\r\n  <div class=\"col-12\">\r\n    <div class=\"card mt-3\">\r\n      <div class=\"card-header\">\r\n        Importar palistas\r\n      </div>\r\n      <div class=\"card-body\">\r\n\r\n        <h5>Datos del archivo</h5>\r\n        <table class=\"table\">\r\n          <tr>\r\n            <th>Nombre: </th>\r\n            <td colspan=\"3\" *ngIf=\"!!file\"> {{ file.name }} </td>\r\n          </tr>\r\n          <tr>\r\n            <th>Fecha: </th>\r\n            <td *ngIf=\"!!file\"> {{ fecha }} </td>\r\n            <th>Hora: </th>\r\n            <td *ngIf=\"!!file\"> {{ hora }} </td>\r\n          </tr>\r\n\r\n          <tr>\r\n            <th>tipo: </th>\r\n            <td *ngIf=\"!!file\"> {{ file.type }} </td>\r\n            <th>tamaño: </th>\r\n            <td *ngIf=\"!!file\"> {{ file.size }} </td>\r\n          </tr>\r\n        </table>\r\n\r\n        <label class=\"btn btn-primary btn-block btn-file\"  [class.btn-secondary]=\"fileUrl.value\">\r\n          <i class=\"fa fa-folder\"> </i> Seleccione el archivo\r\n          <input #fileUrl type=\"file\" style=\"display: none;\" accept=\".json\" (change)=\"onChange($event)\"\r\n            [disabled]=\"fileUrl.value\">\r\n        </label>\r\n\r\n        <div class=\"row  mt-2\">\r\n          <div class=\"col-6\">\r\n            <button type=\"button\" class=\"btn btn-primary btn-block\" \r\n              [disabled]=\"!fileUrl.value\" (click)=\"onUpload()\">\r\n              <i class=\"fa fa-upload\"></i> Importar palistas\r\n            </button>\r\n          </div>\r\n          <div class=\"col-6\">\r\n            <button type=\"button\" class=\"btn btn-secondary btn-block\" (click)=\"goBack()\">\r\n              Cancelar\r\n            </button>\r\n          </div>\r\n        </div>\r\n        \r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n\r\n  <div class=\"col-12\">\r\n    <div class=\"card mt-3\">\r\n\r\n      <div class=\"card-body\">\r\n\r\n        <h5>Resumen</h5>\r\n        <table class=\"table\" *ngIf=\"!!tblResumen\">\r\n          <tr *ngFor=\"let linea of tblResumen\">\r\n            <td (click)=\"showPalistas(linea.tipo)\" class=\"p-1\"> {{ linea.descrip }} </td>\r\n          </tr>\r\n        </table>\r\n\r\n      </div>\r\n    </div>\r\n\r\n    <router-outlet class=\"mt-3\"></router-outlet>\r\n\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -1202,6 +1241,335 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/util/restore/restore.component.html":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/util/restore/restore.component.html ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\r\n    <div class=\"card\">\r\n      <div class=\"card-header\">\r\n        Restaurar BD\r\n      </div>\r\n\r\n      <div class=\"card-body\">\r\n        <div class=\"row\" >\r\n          <div class=\"col-9\">\r\n\r\n            <h5>Datos del archivo</h5>\r\n            <table  class=\"table\">\r\n              <tr>\r\n                <th>Nombre: </th>\r\n                <td colspan=\"3\" *ngIf=\"!!file\"> {{ file.name }} </td>\r\n              </tr>\r\n              <tr>\r\n                <th>Fecha: </th>\r\n                <td *ngIf=\"!!file\"> {{ fecha }} </td>\r\n                <th>Hora: </th>\r\n                <td *ngIf=\"!!file\"> {{ hora }} </td>\r\n              </tr>\r\n              \r\n              <tr>\r\n                <th>tipo: </th>\r\n                <td *ngIf=\"!!file\"> {{ file.type }} </td>\r\n                <th>tamaño: </th>\r\n                <td *ngIf=\"!!file\"> {{ file.size }} </td>\r\n              </tr>\r\n            </table>\r\n          </div>\r\n\r\n          <div class=\"col-3\">\r\n            <h5>Tablas</h5>\r\n            <table class=\"table\">\r\n              <ng-container *ngIf=\"!!tablas\"> \r\n                <tr *ngFor=\"let tabla of tablas\">\r\n                  <td class=\"p-1\"> {{ tabla }} </td>\r\n                </tr>\r\n              </ng-container>\r\n            </table>\r\n          </div>\r\n        </div >\r\n\r\n        <label class=\"btn btn-primary btn-block btn-file\">\r\n            <i class=\"fa fa-folder\"> </i> Seleccione el archivo \r\n          <input #fileUrl type=\"file\" style=\"display: none;\" accept=\".json\" (change)=\"onChange($event)\">\r\n        </label>\r\n\r\n        <div class=\"row\">\r\n          <div class=\"col-6\">\r\n            <button type=\"button\" class=\"btn btn-lg btn-primary btn-block\" [disabled]=\"!fileUrl.value\"\r\n              (click)=\"onUpload()\">\r\n              <i class=\"fa fa-upload\"></i> Restaurar BD\r\n            </button>\r\n          </div>\r\n          <div class=\"col-6\">\r\n            <button type=\"button\" class=\"btn btn-lg btn-secondary btn-block\" (click)=\"goBack()\">\r\n              Cancelar\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/util/util-menu/util-menu.component.html":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/util/util-menu/util-menu.component.html ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n  <div class=\"card card-header mt-3\">\r\n    Utilitarios del sitema\r\n  </div>\r\n\r\n  <div class=\"row mt-3\">\r\n    <div class=\"col-3\">\r\n      <button class=\"btn btn-block btn-outline-primary\" \r\n        routerLink='backup' routerLinkActive=\"active\">\r\n        Backup</button>\r\n      <button class=\"btn btn-block btn-outline-primary\" \r\n        routerLink='restore' routerLinkActive=\"active\">\r\n        Restore</button>\r\n      <button class=\"btn btn-block btn-outline-primary\" \r\n        routerLink='importar-palistas' routerLinkActive=\"active\">\r\n        Importar palistas</button>\r\n      <button class=\"btn btn-block btn-outline-primary\" \r\n        routerLink='copiar-distancias' routerLinkActive=\"active\">\r\n        Copiar distancias</button>\r\n      <button class=\"btn btn-block btn-outline-primary\" \r\n        routerLink='add-field-to-table' routerLinkActive=\"active\">\r\n        Agregar campo a una tabla</button>\r\n    </div>\r\n    <div class=\"col-9\">\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n</div>");
+
+/***/ }),
+
+/***/ "./src/app/util/add-field-to-table/add-field-to-table.component.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/util/add-field-to-table/add-field-to-table.component.ts ***!
+  \*************************************************************************/
+/*! exports provided: AddFieldToTableComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddFieldToTableComponent", function() { return AddFieldToTableComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _services_add_field_to_table_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/add-field-to-table.service */ "./src/app/util/services/add-field-to-table.service.ts");
+/* harmony import */ var _core_message_message_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @core/message/message.service */ "./src/app/core/message/message.service.ts");
+/* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+
+
+
+
+
+
+let AddFieldToTableComponent = class AddFieldToTableComponent {
+    constructor(location, crudService, addFieldService, msg) {
+        this.location = location;
+        this.crudService = crudService;
+        this.addFieldService = addFieldService;
+        this.msg = msg;
+        this.nomTabla = '';
+        this.nomCampo = '';
+    }
+    ngOnInit() {
+    }
+    onAddField() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            console.log(this.nomTabla, this.nomCampo);
+            if (!this.nomTabla || !this.nomCampo) {
+                this.msg.error('Debe indicar el nombre de la tabla y el nombre del campo');
+                return;
+            }
+            const obtenerDatos = () => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () { return this.crudService.getAllRecords$(this.nomTabla).toPromise(); });
+            const tabla = yield obtenerDatos();
+            if (tabla.length === 0) {
+                this.msg.error('La tabla no existe o está vacia');
+                return;
+            }
+            const nomCampo = this.nomCampo;
+            tabla.forEach(el => {
+                if (el.hasOwnProperty(nomCampo)) {
+                    this.msg.error('Por lo menos un registro ya tiene el campo:' + nomCampo);
+                    return;
+                }
+            });
+            let procesando = true;
+            tabla.forEach((el, index) => {
+                const record = Object.assign({}, el, { [nomCampo]: '' });
+                this.crudService.updateRecord$(this.nomTabla, record.id, record).subscribe(_ => {
+                    console.log(index);
+                    if (index + 1 === tabla.length) {
+                        procesando = false;
+                        this.msg.ok('Proceso realizado');
+                        this.location.back();
+                    }
+                });
+            });
+        });
+    }
+    goBack() {
+        this.location.back();
+    }
+};
+AddFieldToTableComponent.ctorParameters = () => [
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"] },
+    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_5__["CrudService"] },
+    { type: _services_add_field_to_table_service__WEBPACK_IMPORTED_MODULE_3__["AddFieldToTableService"] },
+    { type: _core_message_message_service__WEBPACK_IMPORTED_MODULE_4__["MessageService"] }
+];
+AddFieldToTableComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-add-field-to-table',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./add-field-to-table.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/util/add-field-to-table/add-field-to-table.component.html")).default
+    })
+], AddFieldToTableComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/util/backup/backup.component.ts":
+/*!*************************************************!*\
+  !*** ./src/app/util/backup/backup.component.ts ***!
+  \*************************************************/
+/*! exports provided: BackupComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BackupComponent", function() { return BackupComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+/* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+
+
+
+let BackupComponent = class BackupComponent {
+    constructor(location, sanitizer, crudService) {
+        this.location = location;
+        this.sanitizer = sanitizer;
+        this.crudService = crudService;
+        this.emitExportar = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.preparacionStatus = 0;
+        this.mensaje = 'El proceso de exportar los datos puede tardar varios minutos. Para iniciar pulse en el botón preparar datos. Una vez finalizado el proceso pulse en el botón exportar';
+    }
+    ngOnInit() {
+    }
+    goBack() {
+        this.location.back();
+    }
+    exportarDatos() {
+        this.aDownload.nativeElement.click();
+        this.emitExportar.emit('Exportar');
+        this.location.back();
+    }
+    generateDownloadJsonUri() {
+        this.mensaje = 'P r e p a r a n d o . . .';
+        this.preparacionStatus = 1;
+        let jsonData = '{';
+        let contador = 0;
+        let nomTablas = ['categorias', 'clubes', 'distancias', 'competencias', 'consola', 'inscripciones', 'palistas', 'users'];
+        let arrObs = [];
+        nomTablas.forEach(tabla => arrObs.push(this.crudService.getAllRecords$(tabla)));
+        const result$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["merge"])(...arrObs);
+        result$.subscribe({
+            next: data => {
+                jsonData = jsonData + '"' + nomTablas[contador] + '":' + JSON.stringify(data);
+                contador++;
+                if (contador < nomTablas.length) {
+                    jsonData = jsonData + ',';
+                }
+            },
+            complete: () => {
+                jsonData = jsonData + '}';
+                this.downloadJsonHref = this.sanitizer.bypassSecurityTrustUrl("data:text/json;charset=UTF-8," + encodeURIComponent(jsonData));
+                this.mensaje = 'Preparación finalizada';
+                this.preparacionStatus = 2;
+            }
+        });
+    }
+};
+BackupComponent.ctorParameters = () => [
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"] },
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"] },
+    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_4__["CrudService"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], BackupComponent.prototype, "competencia", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('aDownload', { static: false })
+], BackupComponent.prototype, "aDownload", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+], BackupComponent.prototype, "emitExportar", void 0);
+BackupComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-backup',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./backup.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/util/backup/backup.component.html")).default
+    })
+], BackupComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/util/backup/backup.module.ts":
+/*!**********************************************!*\
+  !*** ./src/app/util/backup/backup.module.ts ***!
+  \**********************************************/
+/*! exports provided: BackupModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BackupModule", function() { return BackupModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _backup_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./backup.component */ "./src/app/util/backup/backup.component.ts");
+
+
+
+
+
+const routes = [
+    { path: '', component: _backup_component__WEBPACK_IMPORTED_MODULE_4__["BackupComponent"] }
+];
+let BackupModule = class BackupModule {
+};
+BackupModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_backup_component__WEBPACK_IMPORTED_MODULE_4__["BackupComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes)
+        ]
+    })
+], BackupModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/util/copiar-distancias/copiar-distancias.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/util/copiar-distancias/copiar-distancias.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: CopiarDistanciasComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CopiarDistanciasComponent", function() { return CopiarDistanciasComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+
+
+
+let CopiarDistanciasComponent = class CopiarDistanciasComponent {
+    constructor(crudService) {
+        this.crudService = crudService;
+    }
+    ngOnInit() {
+        this.crudService.getRecord$('competencias', 'lJBIk7KClZmifrIrSysT').subscribe(data => this.distancias = data.distancia);
+    }
+    onSubmit(submitBtn) {
+        submitBtn.disabled = true;
+        this.crudService.getRecord$('tipos-de-competencias', 'pEyNIgxTDfONdV1Sq1xB').subscribe(data => {
+            const record = Object.assign({}, data, { distancia: this.distancias });
+            this.crudService.updateRecord$('tipos-de-competencias', 'pEyNIgxTDfONdV1Sq1xB', record).subscribe(_ => console.log('Proceso realizado satisfactoriamente'));
+        });
+    }
+};
+CopiarDistanciasComponent.ctorParameters = () => [
+    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_2__["CrudService"] }
+];
+CopiarDistanciasComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-copiar-distancias',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./copiar-distancias.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/util/copiar-distancias/copiar-distancias.component.html")).default
+    })
+], CopiarDistanciasComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/util/copiar-distancias/copiar-distancias.module.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/util/copiar-distancias/copiar-distancias.module.ts ***!
+  \********************************************************************/
+/*! exports provided: CopiarDistanciasModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CopiarDistanciasModule", function() { return CopiarDistanciasModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _copiar_distancias_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./copiar-distancias.component */ "./src/app/util/copiar-distancias/copiar-distancias.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+
+const routes = [
+    { path: '', component: _copiar_distancias_component__WEBPACK_IMPORTED_MODULE_3__["CopiarDistanciasComponent"] }
+];
+let CopiarDistanciasModule = class CopiarDistanciasModule {
+};
+CopiarDistanciasModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_copiar_distancias_component__WEBPACK_IMPORTED_MODULE_3__["CopiarDistanciasComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes)
+        ]
+    })
+], CopiarDistanciasModule);
+
+
+
+/***/ }),
+
 /***/ "./src/app/util/importar-palistas/detalle-club.component.ts":
 /*!******************************************************************!*\
   !*** ./src/app/util/importar-palistas/detalle-club.component.ts ***!
@@ -1227,10 +1595,8 @@ let DetalleClubComponent = class DetalleClubComponent {
     }
     ngOnInit() {
         const entidad = this.actRoute.snapshot.paramMap.get('entidad');
-        console.log('TCL: DetalleClubComponent -> ngOnInit -> entidad', entidad);
         this.palistas = this.shareDataService.getData('palistas');
         this.palistas = this.palistas.filter(el => el.ENTIDAD === entidad);
-        console.log('TCL: DetalleClubComponent -> ngOnInit -> this.palistas', this.palistas);
     }
 };
 DetalleClubComponent.ctorParameters = () => [
@@ -1425,15 +1791,12 @@ let ImportarPalistasComponent = class ImportarPalistasComponent {
               let verifyData = await this.verifyTabla(tabla);
               let numRegistros = verifyData ? verifyData.length : 0;
               numRecordsInDB += numRegistros;
-              console.log('tabla:', tabla, 'registros', numRegistros);
               let datos = JSON.stringify(this.datos[tabla])
             }
-            console.log('numRecordsInDB', numRecordsInDB)
         
             if (numRecordsInDB === 0) {
               this.tablas.forEach( async tabla => {
                 let datos = [...this.datos[tabla]];
-                console.log(tabla);
                 datos.forEach( record => {
                   this.crudService.setRecord$(tabla, record);
                 });
@@ -1621,6 +1984,181 @@ ShowPalistasComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/util/restore/restore.component.ts":
+/*!***************************************************!*\
+  !*** ./src/app/util/restore/restore.component.ts ***!
+  \***************************************************/
+/*! exports provided: RestoreComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestoreComponent", function() { return RestoreComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _core_message_message_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @core/message/message.service */ "./src/app/core/message/message.service.ts");
+/* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+
+
+
+
+
+
+let RestoreComponent = class RestoreComponent {
+    constructor(router, location, msg, crudService) {
+        this.router = router;
+        this.location = location;
+        this.msg = msg;
+        this.crudService = crudService;
+    }
+    ngOnInit() {
+    }
+    onChange(e) {
+        this.file = e.target.files[0];
+        let fecha = new Date(this.file.lastModified);
+        this.fecha = fecha.toLocaleDateString();
+        this.hora = fecha.toLocaleTimeString();
+        let reader = new FileReader();
+        reader.onloadend = () => {
+            this.datos = JSON.parse(reader.result);
+            this.tablas = Object.keys(this.datos);
+        };
+        reader.readAsText(this.file);
+    }
+    onUpload() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            let numRecordsInDB = 0;
+            for (const tabla of this.tablas.filter(el => el !== 'users')) {
+                let verifyData = yield this.verifyTabla(tabla);
+                let numRegistros = verifyData ? verifyData.length : 0;
+                numRecordsInDB += numRegistros;
+                // let datos = JSON.stringify(this.datos[tabla])
+            }
+            if (numRecordsInDB === 0) {
+                this.tablas.forEach((tabla) => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+                    let datos = [...this.datos[tabla]];
+                    console.log(tabla);
+                    datos.forEach(record => {
+                        this.crudService.setRecord$(tabla, record);
+                    });
+                }));
+            }
+            this.router.navigate(['home']);
+            this.msg.ok('Datos restaurados satisfactoriamente');
+        });
+    }
+    goBack() {
+        this.location.back();
+    }
+    verifyTabla(tabla) {
+        return this.crudService.getAllRecords$(tabla).toPromise();
+    }
+};
+RestoreComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"] },
+    { type: _core_message_message_service__WEBPACK_IMPORTED_MODULE_4__["MessageService"] },
+    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_5__["CrudService"] }
+];
+RestoreComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-restore',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./restore.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/util/restore/restore.component.html")).default
+    })
+], RestoreComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/util/restore/restore.module.ts":
+/*!************************************************!*\
+  !*** ./src/app/util/restore/restore.module.ts ***!
+  \************************************************/
+/*! exports provided: RestoreModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RestoreModule", function() { return RestoreModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _restore_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./restore.component */ "./src/app/util/restore/restore.component.ts");
+
+
+
+
+
+const routes = [
+    { path: '', component: _restore_component__WEBPACK_IMPORTED_MODULE_4__["RestoreComponent"] }
+];
+let RestoreModule = class RestoreModule {
+};
+RestoreModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_restore_component__WEBPACK_IMPORTED_MODULE_4__["RestoreComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes)
+        ]
+    })
+], RestoreModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/util/services/add-field-to-table.service.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/util/services/add-field-to-table.service.ts ***!
+  \*************************************************************/
+/*! exports provided: AddFieldToTableService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddFieldToTableService", function() { return AddFieldToTableService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
+
+
+let AddFieldToTableService = class AddFieldToTableService {
+    constructor(crudService) {
+        this.crudService = crudService;
+    }
+    addField(nomTabla, nomCampo, defaultValue) {
+        this.crudService.getAllRecords$(nomTabla).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(console.log), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(data => {
+            const newData = [];
+            data.forEach(el => {
+                console.log(el);
+                const record = Object.assign({}, el, { [nomCampo]: defaultValue });
+                newData.push(record);
+            });
+            return newData;
+        }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(console.log));
+    }
+};
+AddFieldToTableService.ctorParameters = () => [
+    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_2__["CrudService"] }
+];
+AddFieldToTableService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], AddFieldToTableService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/util/services/share-data.service.ts":
 /*!*****************************************************!*\
   !*** ./src/app/util/services/share-data.service.ts ***!
@@ -1646,17 +2184,11 @@ let ShareDataService = class ShareDataService {
         this.data$.next(null);
     }
     sendData(data) {
-        console.log('TCL: ShareDataService -> sendData -> data', data);
         this.data$.next(Object.assign({}, data));
         this.data.push(Object.assign({}, data));
-        console.log(this.data);
     }
     getData(tipo) {
-        console.log('TCL: ShareDataService -> getData -> nombre', tipo);
-        console.log('TCL: ShareDataService -> getData -> this.data', this.data);
-        console.log('TCL: ShareDataService -> getData -> this.data', this.data[tipo]);
         /* let elemento = this.data.find( (el, index) => {
-          console.log(el);
           return el.nombre === nombre
         });
         return elemento.value; */
@@ -1671,7 +2203,148 @@ ShareDataService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 
 
+/***/ }),
+
+/***/ "./src/app/util/util-menu/util-menu.component.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/util/util-menu/util-menu.component.ts ***!
+  \*******************************************************/
+/*! exports provided: UtilMenuComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UtilMenuComponent", function() { return UtilMenuComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let UtilMenuComponent = class UtilMenuComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+UtilMenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-util-menu',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./util-menu.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/util/util-menu/util-menu.component.html")).default
+    })
+], UtilMenuComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/util/util-routing.module.ts":
+/*!*********************************************!*\
+  !*** ./src/app/util/util-routing.module.ts ***!
+  \*********************************************/
+/*! exports provided: UtilRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UtilRoutingModule", function() { return UtilRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _util_menu_util_menu_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util-menu/util-menu.component */ "./src/app/util/util-menu/util-menu.component.ts");
+/* harmony import */ var _restore_restore_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./restore/restore.component */ "./src/app/util/restore/restore.component.ts");
+/* harmony import */ var _backup_backup_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./backup/backup.component */ "./src/app/util/backup/backup.component.ts");
+/* harmony import */ var _add_field_to_table_add_field_to_table_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./add-field-to-table/add-field-to-table.component */ "./src/app/util/add-field-to-table/add-field-to-table.component.ts");
+/* harmony import */ var _importar_palistas_importar_palistas_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./importar-palistas/importar-palistas.component */ "./src/app/util/importar-palistas/importar-palistas.component.ts");
+/* harmony import */ var _copiar_distancias_copiar_distancias_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./copiar-distancias/copiar-distancias.component */ "./src/app/util/copiar-distancias/copiar-distancias.component.ts");
+
+
+
+
+
+
+
+
+
+const routes = [
+    {
+        path: '', component: _util_menu_util_menu_component__WEBPACK_IMPORTED_MODULE_3__["UtilMenuComponent"],
+        children: [
+            { path: 'backup', component: _backup_backup_component__WEBPACK_IMPORTED_MODULE_5__["BackupComponent"] },
+            { path: 'restore', component: _restore_restore_component__WEBPACK_IMPORTED_MODULE_4__["RestoreComponent"] },
+            { path: 'importar-palistas', component: _importar_palistas_importar_palistas_component__WEBPACK_IMPORTED_MODULE_7__["ImportarPalistasComponent"] },
+            { path: 'copiar-distancias', component: _copiar_distancias_copiar_distancias_component__WEBPACK_IMPORTED_MODULE_8__["CopiarDistanciasComponent"] },
+            { path: 'add-field-to-table', component: _add_field_to_table_add_field_to_table_component__WEBPACK_IMPORTED_MODULE_6__["AddFieldToTableComponent"] },
+        ]
+    }
+];
+let UtilRoutingModule = class UtilRoutingModule {
+};
+UtilRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+    })
+], UtilRoutingModule);
+
+/* { path: 'backup', loadChildren: () => import('./backup/backup.module').then(m => m.BackupModule) },
+{ path: 'restore', loadChildren: () => import('./restore/restore.module').then(m => m.RestoreModule) },
+{ path: 'importar-palistas', loadChildren: () => import('./importar-palistas/importar-palistas.module').then(m => m.ImportarPalistasModule) },
+{ path: 'copiar-distancias', loadChildren: () => import('./copiar-distancias/copiar-distancias.module').then(m => m.CopiarDistanciasModule) },
+*/ 
+
+
+/***/ }),
+
+/***/ "./src/app/util/util.module.ts":
+/*!*************************************!*\
+  !*** ./src/app/util/util.module.ts ***!
+  \*************************************/
+/*! exports provided: UtilModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UtilModule", function() { return UtilModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _util_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util-routing.module */ "./src/app/util/util-routing.module.ts");
+/* harmony import */ var _util_menu_util_menu_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util-menu/util-menu.component */ "./src/app/util/util-menu/util-menu.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _backup_backup_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./backup/backup.module */ "./src/app/util/backup/backup.module.ts");
+/* harmony import */ var _restore_restore_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./restore/restore.module */ "./src/app/util/restore/restore.module.ts");
+/* harmony import */ var _add_field_to_table_add_field_to_table_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./add-field-to-table/add-field-to-table.component */ "./src/app/util/add-field-to-table/add-field-to-table.component.ts");
+/* harmony import */ var _importar_palistas_importar_palistas_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./importar-palistas/importar-palistas.module */ "./src/app/util/importar-palistas/importar-palistas.module.ts");
+/* harmony import */ var _copiar_distancias_copiar_distancias_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./copiar-distancias/copiar-distancias.module */ "./src/app/util/copiar-distancias/copiar-distancias.module.ts");
+
+
+
+
+
+
+
+
+
+
+
+let UtilModule = class UtilModule {
+};
+UtilModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_util_menu_util_menu_component__WEBPACK_IMPORTED_MODULE_4__["UtilMenuComponent"], _add_field_to_table_add_field_to_table_component__WEBPACK_IMPORTED_MODULE_8__["AddFieldToTableComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _util_routing_module__WEBPACK_IMPORTED_MODULE_3__["UtilRoutingModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+            _backup_backup_module__WEBPACK_IMPORTED_MODULE_6__["BackupModule"],
+            _restore_restore_module__WEBPACK_IMPORTED_MODULE_7__["RestoreModule"],
+            _importar_palistas_importar_palistas_module__WEBPACK_IMPORTED_MODULE_9__["ImportarPalistasModule"],
+            _copiar_distancias_copiar_distancias_module__WEBPACK_IMPORTED_MODULE_10__["CopiarDistanciasModule"]
+        ]
+    })
+], UtilModule);
+
+
+
 /***/ })
 
 }]);
-//# sourceMappingURL=util-importar-palistas-importar-palistas-module-es2015.js.map
+//# sourceMappingURL=util-util-module-es2015.js.map

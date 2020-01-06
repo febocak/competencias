@@ -10,6 +10,7 @@
 var map = {
 	"./tables/categorias/categorias.module": [
 		"./src/app/tables/categorias/categorias.module.ts",
+		"common",
 		"tables-categorias-categorias-module"
 	]
 };
@@ -23,7 +24,7 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[1]).then(function() {
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
 		return __webpack_require__(id);
 	});
 }
@@ -70,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron pt-5 vh-100\">\r\n  <h2 class=\"text-left mb-0\"><strong>SISRIRCO</strong></h2>\r\n  <h4 class=\"text-left\">Sistema de Registro de Inscripciones y Resultados de Competencias</h4>\r\n  <hr class=\"my-4\">\r\n  <div class=\"container text-secondary\">\r\n    <div class=\"row\">\r\n      <div class=\"col-2\"><h5>Competencia:</h5></div>\r\n      <th class=\"col-9\"><h5>{{ competencia.competencia}}</h5></th>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-2\"><h5>Fecha:</h5></div>\r\n      <th class=\"col-9\"><h5>{{ strFecha }}</h5></th>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-2\"><h5>Satus:</h5></div>\r\n      <th class=\"col-9\"><h5>{{ competencia.status }}</h5></th>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-2\"><h5>Club anfitrion:</h5></div>\r\n      <th class=\"col-9\"><h5>{{ competencia.club }}</h5></th>\r\n    </div>\r\n  </div>\r\n\r\n  <hr class=\"my-4\">\r\n  <p>Bienvenidos a la web de inscripciones para los encuentros del Canotaje de la Provincia de Buenos Aires.</p>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron pt-5 vh-100\">\r\n  <h2 class=\"text-left mb-0\"><strong>SISRIRCO</strong></h2>\r\n  <h4 class=\"text-left\">Sistema de Registro de Inscripciones y Resultados de Competencias</h4>\r\n  <hr class=\"my-4\">\r\n  <div class=\"container text-secondary\">\r\n    <div class=\"row\">\r\n      <div class=\"col-2\"><h5>Competencia:</h5></div>\r\n      <th class=\"col-9\"><h5>{{ competencia.competencia}}</h5></th>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-2\"><h5>Fecha:</h5></div>\r\n      <th class=\"col-9\"><h5>{{ strFecha }}</h5></th>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-2\"><h5>Satus:</h5></div>\r\n      <th class=\"col-9\"><h5>{{ competencia.status }}</h5></th>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-2\"><h5>Club anfitrion:</h5></div>\r\n      <th class=\"col-9\"><h5>{{ competencia.club }}</h5></th>\r\n    </div>\r\n  </div>\r\n\r\n  <hr class=\"my-4\">\r\n  <p>Bienvenidos a la web de inscripciones para los encuentros del Canotaje de la Provincia de Buenos Aires.</p>\r\n  <p>Compilado [Lunes 06/01/2020] 07:30 am</p>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -84,6 +85,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("  <div class=\"row mt-3\">\r\n    <div class=\"col-sm-12 col-md-6 col-lg-4 mx-auto\">\r\n      <div class=\"card\">\r\n        <div class=\"card-header\">\r\n          Login\r\n        </div>\r\n        <div class=\"card-body\">\r\n          <form #miForm=\"ngForm\" (submit)=\"onLogin()\">\r\n            <div class=\"form-group\">\r\n              <div class=\"input-group mb-3\">\r\n                  <div class=\"input-group-prepend\">\r\n                    <span class=\"input-group-text\" style=\"width:2rem\"><i class=\"fa fa-envelope\"></i></span>\r\n                  </div>\r\n                  <input required pattern=\"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}\"\r\n                    [class.is-invalid]=\"emailRef.invalid && emailRef.touched\"\r\n                    #emailRef=\"ngModel\" [(ngModel)]=\"email\" type=\"email\" name=\"email\" \r\n                    class=\"form-control\" placeholder=\"email\">\r\n                  </div>\r\n                <small class=\"text-danger\" [class.d-none]=\"emailRef.untouched || !emailRef.hasError('required')\">El email es requerido</small>\r\n                <small class=\"text-danger\" [class.d-none]=\"emailRef.untouched || !emailRef.hasError('pattern') \">No es en un email valido</small>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <div class=\"input-group mb-3\">\r\n                <div class=\"input-group-prepend\">\r\n                  <span class=\"input-group-text\" style=\"width:2rem\"><i class=\"fa fa-lock\"></i></span>\r\n                </div>\r\n                <input required minlength=\"6\"\r\n                [class.is-invalid]=\"passwordRef.invalid && passwordRef.touched\"\r\n                  #passwordRef=\"ngModel\" [(ngModel)]=\"password\" type=\"password\" name=\"password\"\r\n                  class=\"form-control\" placeholder=\"Contraseña\" >\r\n              </div>\r\n              <small class=\"text-danger\" [class.d-none]=\"passwordRef.untouched || !passwordRef.hasError('required')\">El password es requerido</small>\r\n              <small class=\"text-danger\" [class.d-none]=\"passwordRef.untouched || !passwordRef.hasError('minlength')\">La longitud mínima es 6 caracteres</small>\r\n            </div>\r\n\r\n            <div class=\"form-group\">\r\n              <button  [disabled]=\"miForm.form.invalid\" type=\"submit\" class=\"btn btn-primary btn-block\">\r\n                <span><i class=\"fa fa-check\"></i></span> Aceptar </button>\r\n            </div>\r\n\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/core/login/redireccionar-login.component.html":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/core/login/redireccionar-login.component.html ***!
+  \*****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row mt-5\">\r\n    <div class=\"col-6 mx-auto\">\r\n  \r\n      <div class=\"jumbotron p-5\">\r\n        <h1 class=\"display-6\">Configurar el sistema!</h1>\r\n        <p class=\"lead\">El sistema detectó que aún no ha realizado la importacion de los datos \r\n          de las inscripciones.\r\n        </p>\r\n        <hr class=\"my-4\">\r\n        <p>\r\n          Será redireccionado a la opción para importar las inscripciones.\r\n        </p>\r\n        <div class=\"row\">\r\n          <div class=\"col-10 mx-auto\">\r\n            <button class=\"btn btn btn-lg btn-block btn-success\" (click)=\"onSubmit()\">\r\n              <i class=\"fa fa-angle-double-right fa-2x\"></i> Continuar\r\n            </button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n  \r\n    </div>\r\n  </div>");
 
 /***/ }),
 
@@ -122,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-md navbar-dark bg-success\">\n  <img class=\"mr-4\" src=\"assets/img/icono.png\" />\n  <a class=\"navbar-brand\" routerLink=\"/home\">\n    <h4> <strong>SISRIRCO</strong> - Administración </h4>\n    <h6> <strong>FeBoCaK</strong> Federación Bonairense de Canoas y Kayaks</h6>\n  </a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navMenu\"\n    aria-controls=\"navMenu\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse\" id=\"navMenu\">\n    <ul class=\"navbar-nav ml-auto\">\n      <li class=\"nav-item\" *ngIf=\"!usuario\">\n        <a class=\"nav-link\" routerLink=\"/login\" routerLinkActive=\"active\"> <strong>Ingresar</strong> </a>\n      </li>\n\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n          aria-haspopup=\"true\" aria-expanded=\"false\">\n          <i class=\"fa fa-table\"></i>&nbsp; Tablas\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n          <a *ngIf=\"usuario.rol == 'Administración'\" class=\"dropdown-item\" routerLink=\"/usuarios\"\n            routerLinkActive=\"active\"> <strong>Usuarios</strong> </a>\n\n          <a *ngIf=\"usuario.rol == 'Administración'\" class=\"dropdown-item\" routerLink=\"/clubes\"\n            routerLinkActive=\"active\"> <strong>Clubes</strong> </a>\n\n          <a *ngIf=\"usuario.rol == 'Administración'\" class=\"dropdown-item\" routerLink=\"/categorias\"\n            routerLinkActive=\"active\"> <strong>Categorías</strong> </a>\n\n          <a *ngIf=\"usuario.rol == 'Administración'\" class=\"dropdown-item\" routerLink=\"/competencias\"\n            routerLinkActive=\"active\"> <strong>Competencias</strong> </a>\n        </div>\n      </li>\n\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n          aria-haspopup=\"true\" aria-expanded=\"false\">\n          <i class=\"fa fa-folder\"></i>&nbsp; Procesos\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n\n          <a class=\"dropdown-item\" routerLink=\"/palistas\" routerLinkActive=\"active\"> <strong>Palistas</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/inscripciones\" routerLinkActive=\"active\"> <strong>Inscripciones</strong></a>\n          <a class=\"dropdown-item\" routerLink=\"/consultar-inscripciones\" routerLinkActive=\"active\"> <strong>Consultar Inscripciones</strong></a>\n          <a class=\"dropdown-item\" routerLink=\"/consola\" routerLinkActive=\"active\"> <strong>Consola</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/backup\" routerLinkActive=\"active\"> <strong>Backup</strong> </a>\n\n        </div>\n      </li>\n\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n          aria-haspopup=\"true\" aria-expanded=\"false\">\n          {{ usuario.name }} &nbsp; <i class=\"fa fa-user\"></i>&nbsp;\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n          <a class=\"dropdown-item\" routerLink=\"/profile\"> <strong>Perfil</strong> </a>\n          <a class=\"dropdown-item\" (click)=\"onLogout()\"> <strong>Salir</strong> </a>\n        </div>\n      </li>\n\n    </ul>\n\n  </div>\n</nav>");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-md navbar-dark bg-success\">\r\n  <img class=\"mr-4\" src=\"assets/img/icono.png\" />\r\n  <a class=\"navbar-brand\" routerLink=\"/home\">\r\n    <h4> <strong>SISRIRCO</strong> - Administración </h4>\r\n    <h6> <strong>FeBoCaK</strong> Federación Bonairense de Canoas y Kayaks</h6>\r\n  </a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navMenu\"\r\n    aria-controls=\"navMenu\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navMenu\">\r\n    <ul class=\"navbar-nav ml-auto\">\r\n      <li class=\"nav-item\" *ngIf=\"!usuario\">\r\n        <a class=\"nav-link\" routerLink=\"/login\" routerLinkActive=\"active\"> <strong>Ingresar</strong> </a>\r\n      </li>\r\n\r\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\r\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\r\n          aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <i class=\"fa fa-table\"></i>&nbsp; Tablas\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a *ngIf=\"usuario.rol == 'Administración'\" class=\"dropdown-item\" routerLink=\"/usuarios\"\r\n            routerLinkActive=\"active\"> <strong>Usuarios</strong> </a>\r\n\r\n          <a *ngIf=\"usuario.rol == 'Administración'\" class=\"dropdown-item\" routerLink=\"/clubes\"\r\n            routerLinkActive=\"active\"> <strong>Clubes</strong> </a>\r\n\r\n          <a *ngIf=\"usuario.rol == 'Administración'\" class=\"dropdown-item\" routerLink=\"/categorias\"\r\n            routerLinkActive=\"active\"> <strong>Categorías</strong> </a>\r\n          \r\n            <a *ngIf=\"usuario.rol == 'Administración'\" class=\"dropdown-item\" routerLink=\"/tipos-de-competencias\"\r\n            routerLinkActive=\"active\"> <strong>Tipos de competencias</strong> </a>\r\n\r\n          <a *ngIf=\"usuario.rol == 'Administración'\" class=\"dropdown-item\" routerLink=\"/competencias\"\r\n            routerLinkActive=\"active\"> <strong>Competencias</strong> </a>\r\n        </div>\r\n      </li>\r\n\r\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\r\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\r\n          aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <i class=\"fa fa-folder\"></i>&nbsp; Procesos\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n\r\n          <a class=\"dropdown-item\" routerLink=\"/palistas\" routerLinkActive=\"active\"> <strong>Palistas</strong> </a>\r\n          <a class=\"dropdown-item\" routerLink=\"/consultar-inscripciones\" routerLinkActive=\"active\"> <strong>Consultar Inscripciones</strong></a>\r\n          <a class=\"dropdown-item\" routerLink=\"/consola\" routerLinkActive=\"active\"> <strong>Consola</strong> </a>\r\n          <a class=\"dropdown-item\" routerLink=\"/backup\" routerLinkActive=\"active\"> <strong>Backup</strong> </a>\r\n\r\n        </div>\r\n      </li>\r\n\r\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\r\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\r\n          aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          {{ usuario.name }} &nbsp; <i class=\"fa fa-user\"></i>&nbsp;\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" routerLink=\"/profile\"> <strong>Perfil</strong> </a>\r\n          <a class=\"dropdown-item\" (click)=\"onLogout()\"> <strong>Salir</strong> </a>\r\n        </div>\r\n      </li>\r\n\r\n    </ul>\r\n\r\n  </div>\r\n</nav>");
 
 /***/ }),
 
@@ -135,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-md navbar-dark bg-primary\">\n  <img class=\"mr-4\" src=\"assets/img/icono.png\" />\n  <a class=\"navbar-brand\" routerLink=\"/home\">\n    <h4> <strong>SISRIRCO</strong> - Competencias </h4>\n    <h6> <strong>FeBoCaK</strong> Federación Bonairense de Canoas y Kayaks</h6>\n  </a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navMenu\"\n    aria-controls=\"navMenu\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse\" id=\"navMenu\">\n    <ul class=\"navbar-nav ml-auto\">\n      <li class=\"nav-item\" *ngIf=\"!usuario\">\n        <a class=\"nav-link\" routerLink=\"/login\" routerLinkActive=\"active\"> <strong>Ingresar</strong> </a>\n      </li>\n\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n          aria-haspopup=\"true\" aria-expanded=\"false\">\n          <i class=\"fa fa-folder\"></i>&nbsp; Procesos\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n          <a class=\"dropdown-item\" routerLink=\"/palistas\" routerLinkActive=\"active\"> <strong>Importar inscripciones</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/inscripciones\" routerLinkActive=\"active\"> <strong>Editar carreras</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/armar-equipos\" routerLinkActive=\"active\"> <strong>Generar semifinales</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/armar-equipos\" routerLinkActive=\"active\"> <strong>Exportar resultados</strong> </a>\n       </div>\n      </li>\n\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n          aria-haspopup=\"true\" aria-expanded=\"false\">\n          <i class=\"fa fa-folder\"></i>&nbsp; Carreras\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n          <a class=\"dropdown-item\" routerLink=\"/palistas\" routerLinkActive=\"active\"> <strong>Carreras</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/inscripciones\" routerLinkActive=\"active\"> <strong>Series</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/armar-equipos\" routerLinkActive=\"active\"> <strong>Semifinales</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/armar-equipos\" routerLinkActive=\"active\"> <strong>Finales</strong> </a>\n       </div>\n      </li>\n\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n          aria-haspopup=\"true\" aria-expanded=\"false\">\n          {{ usuario.name }} &nbsp; <i class=\"fa fa-user\"></i>&nbsp;\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n          <a class=\"dropdown-item\" routerLink=\"/profile\"> <strong>Perfil</strong> </a>\n          <a class=\"dropdown-item\" (click)=\"onLogout()\"> <strong>Salir</strong> </a>\n        </div>\n      </li>\n\n    </ul>\n\n  </div>\n</nav>");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-md navbar-dark bg-primary\">\n  <img class=\"mr-4\" src=\"assets/img/icono.png\" />\n  <a class=\"navbar-brand\" routerLink=\"/home\">\n    <h4> <strong>SISRIRCO</strong> - Competencias </h4>\n    <h6> <strong>FeBoCaK</strong> Federación Bonairense de Canoas y Kayaks</h6>\n  </a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navMenu\"\n    aria-controls=\"navMenu\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse\" id=\"navMenu\">\n    <ul class=\"navbar-nav ml-auto\">\n      <li class=\"nav-item\" *ngIf=\"!usuario\">\n        <a class=\"nav-link\" routerLink=\"/login\" routerLinkActive=\"active\"> <strong>Ingresar</strong> </a>\n      </li>\n\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n          aria-haspopup=\"true\" aria-expanded=\"false\">\n          <i class=\"fa fa-folder\"></i>&nbsp; Procesos\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n          <a class=\"dropdown-item\" routerLink=\"/importar-inscripciones\" routerLinkActive=\"active\"> <strong>Importar inscripciones</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/generar-series\" routerLinkActive=\"active\"> <strong>Generar carreras</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/editar-serie\" routerLinkActive=\"active\"> <strong>Editar carreras</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/armar-equipos\" routerLinkActive=\"active\"> <strong>Generar semifinales</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/armar-equipos\" routerLinkActive=\"active\"> <strong>Exportar resultados</strong> </a>\n       </div>\n      </li>\n\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n          aria-haspopup=\"true\" aria-expanded=\"false\">\n          <i class=\"fa fa-folder\"></i>&nbsp; Carreras\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n          <a class=\"dropdown-item\" routerLink=\"/palistas\" routerLinkActive=\"active\"> <strong>Carreras</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/inscripciones\" routerLinkActive=\"active\"> <strong>Series</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/armar-equipos\" routerLinkActive=\"active\"> <strong>Semifinales</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/armar-equipos\" routerLinkActive=\"active\"> <strong>Finales</strong> </a>\n       </div>\n      </li>\n\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n          aria-haspopup=\"true\" aria-expanded=\"false\">\n          {{ usuario.name }} &nbsp; <i class=\"fa fa-user\"></i>&nbsp;\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n          <a class=\"dropdown-item\" routerLink=\"/profile\"> <strong>Perfil</strong> </a>\n          <a class=\"dropdown-item\" (click)=\"onLogout()\"> <strong>Salir</strong> </a>\n        </div>\n      </li>\n\n    </ul>\n\n  </div>\n</nav>");
 
 /***/ }),
 
@@ -148,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-md navbar-dark bg-info\">\n  <img class=\"mr-4\" src=\"assets/img/icono.png\" />\n  <a class=\"navbar-brand\" routerLink=\"/home\">\n    <h4> <strong>SISRIRCO</strong> - Inscripciones </h4>\n    <h6> <strong>FeBoCaK</strong> Federación Bonairense de Canoas y Kayaks</h6>\n  </a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navMenu\"\n    aria-controls=\"navMenu\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse\" id=\"navMenu\">\n    <ul class=\"navbar-nav ml-auto\">\n      <li class=\"nav-item\" *ngIf=\"!usuario\">\n        <a class=\"nav-link\" routerLink=\"/login\" routerLinkActive=\"active\"> <strong>Ingresar</strong> </a>\n      </li>\n\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n          aria-haspopup=\"true\" aria-expanded=\"false\">\n          <i class=\"fa fa-folder\"></i>&nbsp; Procesos\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n          <a class=\"dropdown-item\" routerLink=\"/palistas\" routerLinkActive=\"active\"> <strong>Palistas</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/inscripciones\" routerLinkActive=\"active\"> <strong>Inscripciones</strong> </a>\n          <a class=\"dropdown-item\" routerLink=\"/armar-equipos\" routerLinkActive=\"active\"> <strong>Armar equipos</strong> </a>\n       </div>\n      </li>\n\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\n          aria-haspopup=\"true\" aria-expanded=\"false\">\n          {{ usuario.name }} &nbsp; <i class=\"fa fa-user\"></i>&nbsp;\n        </a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n          <a class=\"dropdown-item\" routerLink=\"/profile\"> <strong>Perfil</strong> </a>\n          <a class=\"dropdown-item\" (click)=\"onLogout()\"> <strong>Salir</strong> </a>\n        </div>\n      </li>\n\n    </ul>\n\n  </div>\n</nav>");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-md navbar-dark bg-info\">\r\n  <img class=\"mr-4\" src=\"assets/img/icono.png\" />\r\n  <a class=\"navbar-brand\" routerLink=\"/home\">\r\n    <h4> <strong>SISRIRCO</strong> - Inscripciones </h4>\r\n    <h6> <strong>FeBoCaK</strong> Federación Bonairense de Canoas y Kayaks</h6>\r\n    <h6 *ngIf=\"!!usuario\"> <strong>{{ usuario.club }}</strong></h6>\r\n  </a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navMenu\"\r\n    aria-controls=\"navMenu\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navMenu\">\r\n    <ul class=\"navbar-nav ml-auto\">\r\n      <li class=\"nav-item\" *ngIf=\"!usuario\">\r\n        <a class=\"nav-link\" routerLink=\"/login\" routerLinkActive=\"active\"> <strong>Ingresar</strong> </a>\r\n      </li>\r\n\r\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\r\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\r\n          aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          <i class=\"fa fa-folder\"></i>&nbsp; Procesos\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" routerLink=\"/palistas\" routerLinkActive=\"active\"> <strong>Palistas</strong> </a>\r\n          <a class=\"dropdown-item\" routerLink=\"/inscripciones\" routerLinkActive=\"active\"> <strong>Inscripciones</strong> </a>\r\n          <a class=\"dropdown-item\" routerLink=\"/armar-equipos\" routerLinkActive=\"active\"> <strong>Armar equipos</strong> </a>\r\n       </div>\r\n      </li>\r\n\r\n      <li class=\"nav-item dropdown\" *ngIf=\"!!usuario\">\r\n        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\r\n          aria-haspopup=\"true\" aria-expanded=\"false\">\r\n          {{ usuario.name }} &nbsp; <i class=\"fa fa-user\"></i>&nbsp;\r\n        </a>\r\n        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n          <a class=\"dropdown-item\" routerLink=\"/profile\"> <strong>Perfil</strong> </a>\r\n          <a class=\"dropdown-item\" (click)=\"onLogout()\"> <strong>Salir</strong> </a>\r\n        </div>\r\n      </li>\r\n\r\n    </ul>\r\n\r\n  </div>\r\n</nav>");
 
 /***/ }),
 
@@ -161,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-spinner [loading$]=\"loading$\" ></app-spinner>\n\n<ng-container [ngSwitch]=\"modulo\">\n  <app-navbar-admin *ngSwitchCase = \"'Administración'\"\n    [usuario]=\"usuario$ | async\" (emitLogout)=\"onLogout()\" >\n  </app-navbar-admin>\n\n  <app-navbar-inscripcion *ngSwitchCase = \"'Inscripciones'\"\n    [usuario]=\"usuario$ | async\" (emitLogout)=\"onLogout()\" >\n  </app-navbar-inscripcion>\n\n  <app-navbar-competencia *ngSwitchCase = \"'Competencias'\"\n    [usuario]=\"usuario$ | async\" (emitLogout)=\"onLogout()\" >\n  </app-navbar-competencia>\n\n</ng-container>\n\n\n  \n<app-message></app-message>\n  \n<router-outlet></router-outlet>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-spinner [loading$]=\"loading$\" ></app-spinner>\r\n\r\n<ng-container [ngSwitch]=\"modulo\">\r\n  <app-navbar-admin *ngSwitchCase = \"'Administración'\"\r\n    [usuario]=\"usuario$ | async\" (emitLogout)=\"onLogout()\" >\r\n  </app-navbar-admin>\r\n\r\n  <app-navbar-inscripcion *ngSwitchCase = \"'Inscripciones'\"\r\n    [usuario]=\"usuario$ | async\" (emitLogout)=\"onLogout()\" >\r\n  </app-navbar-inscripcion>\r\n\r\n  <app-navbar-competencia *ngSwitchCase = \"'Competencias'\"\r\n    [usuario]=\"usuario$ | async\" (emitLogout)=\"onLogout()\" >\r\n  </app-navbar-competencia>\r\n\r\n</ng-container>\r\n\r\n\r\n  \r\n<app-message></app-message>\r\n  \r\n<router-outlet></router-outlet>\r\n");
 
 /***/ }),
 
@@ -424,6 +438,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @core/home/home.component */ "./src/app/core/home/home.component.ts");
 /* harmony import */ var _core_error_error_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/error/error.component */ "./src/app/core/error/error.component.ts");
 /* harmony import */ var _core_login_login_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @core/login/login.component */ "./src/app/core/login/login.component.ts");
+/* harmony import */ var _core_login_authLocal_guard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @core/login/authLocal.guard */ "./src/app/core/login/authLocal.guard.ts");
+/* harmony import */ var _core_login_redireccionar_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @core/login/redireccionar-login.component */ "./src/app/core/login/redireccionar-login.component.ts");
+
+
 
 
 
@@ -434,19 +452,22 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     { path: 'home', resolve: { competenciaData: _core_home_home_resolver_guard__WEBPACK_IMPORTED_MODULE_3__["HomeResolver"] }, component: _core_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"] },
     { path: 'error', component: _core_error_error_component__WEBPACK_IMPORTED_MODULE_5__["ErrorComponent"] },
-    { path: 'login', component: _core_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"] },
-    { path: 'usuarios', loadChildren: () => __webpack_require__.e(/*! import() | tables-usuarios-usuarios-module */ "tables-usuarios-usuarios-module").then(__webpack_require__.bind(null, /*! ./tables/usuarios/usuarios.module */ "./src/app/tables/usuarios/usuarios.module.ts")).then(m => m.UsuariosModule) },
+    { path: 'login', component: _core_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"], canActivate: [_core_login_authLocal_guard__WEBPACK_IMPORTED_MODULE_7__["AuthLocalGuard"]] },
+    { path: 'redireccionar-login', component: _core_login_redireccionar_login_component__WEBPACK_IMPORTED_MODULE_8__["RedireccionarLoginComponent"] },
+    { path: 'usuarios', loadChildren: () => Promise.all(/*! import() | tables-usuarios-usuarios-module */[__webpack_require__.e("common"), __webpack_require__.e("tables-usuarios-usuarios-module")]).then(__webpack_require__.bind(null, /*! ./tables/usuarios/usuarios.module */ "./src/app/tables/usuarios/usuarios.module.ts")).then(m => m.UsuariosModule) },
     { path: 'categorias', loadChildren: './tables/categorias/categorias.module#CategoriasModule' },
-    { path: 'clubes', loadChildren: () => __webpack_require__.e(/*! import() | tables-clubes-clubes-module */ "tables-clubes-clubes-module").then(__webpack_require__.bind(null, /*! ./tables/clubes/clubes.module */ "./src/app/tables/clubes/clubes.module.ts")).then(m => m.ClubesModule) },
-    { path: 'competencias', loadChildren: () => __webpack_require__.e(/*! import() | tables-competencias-competencias-module */ "tables-competencias-competencias-module").then(__webpack_require__.bind(null, /*! ./tables/competencias/competencias.module */ "./src/app/tables/competencias/competencias.module.ts")).then(m => m.CompetenciasModule) },
-    { path: 'distancias', loadChildren: () => __webpack_require__.e(/*! import() | tables-distancias-distancias-module */ "tables-distancias-distancias-module").then(__webpack_require__.bind(null, /*! ./tables/distancias/distancias.module */ "./src/app/tables/distancias/distancias.module.ts")).then(m => m.DistanciasModule) },
-    { path: 'palistas', loadChildren: () => __webpack_require__.e(/*! import() | tables-palistas-palistas-module */ "tables-palistas-palistas-module").then(__webpack_require__.bind(null, /*! ./tables/palistas/palistas.module */ "./src/app/tables/palistas/palistas.module.ts")).then(m => m.PalistasModule) },
+    { path: 'clubes', loadChildren: () => Promise.all(/*! import() | tables-clubes-clubes-module */[__webpack_require__.e("common"), __webpack_require__.e("tables-clubes-clubes-module")]).then(__webpack_require__.bind(null, /*! ./tables/clubes/clubes.module */ "./src/app/tables/clubes/clubes.module.ts")).then(m => m.ClubesModule) },
+    { path: 'tipos-de-competencias', loadChildren: () => Promise.all(/*! import() | tables-tipos-de-competencias-tipos-de-competencias-module */[__webpack_require__.e("common"), __webpack_require__.e("tables-tipos-de-competencias-tipos-de-competencias-module")]).then(__webpack_require__.bind(null, /*! ./tables/tipos-de-competencias/tipos-de-competencias.module */ "./src/app/tables/tipos-de-competencias/tipos-de-competencias.module.ts")).then(m => m.TiposDeCompetenciasModule) },
+    { path: 'competencias', loadChildren: () => Promise.all(/*! import() | tables-competencias-competencias-module */[__webpack_require__.e("common"), __webpack_require__.e("tables-competencias-competencias-module")]).then(__webpack_require__.bind(null, /*! ./tables/competencias/competencias.module */ "./src/app/tables/competencias/competencias.module.ts")).then(m => m.CompetenciasModule) },
+    { path: 'distancias', loadChildren: () => Promise.all(/*! import() | tables-distancias-distancias-module */[__webpack_require__.e("common"), __webpack_require__.e("tables-distancias-distancias-module")]).then(__webpack_require__.bind(null, /*! ./tables/distancias/distancias.module */ "./src/app/tables/distancias/distancias.module.ts")).then(m => m.DistanciasModule) },
+    { path: 'palistas', loadChildren: () => Promise.all(/*! import() | tables-palistas-palistas-module */[__webpack_require__.e("common"), __webpack_require__.e("tables-palistas-palistas-module")]).then(__webpack_require__.bind(null, /*! ./tables/palistas/palistas.module */ "./src/app/tables/palistas/palistas.module.ts")).then(m => m.PalistasModule) },
     { path: 'inscripciones', loadChildren: () => Promise.all(/*! import() | procedures-inscripciones-inscripciones-module */[__webpack_require__.e("common"), __webpack_require__.e("procedures-inscripciones-inscripciones-module")]).then(__webpack_require__.bind(null, /*! ./procedures/inscripciones/inscripciones.module */ "./src/app/procedures/inscripciones/inscripciones.module.ts")).then(m => m.InscripcionesModule) },
-    { path: 'backup', loadChildren: () => __webpack_require__.e(/*! import() | util-backup-backup-module */ "util-backup-backup-module").then(__webpack_require__.bind(null, /*! ./util/backup/backup.module */ "./src/app/util/backup/backup.module.ts")).then(m => m.BackupModule) },
-    { path: 'restore', loadChildren: () => __webpack_require__.e(/*! import() | util-restore-restore-module */ "util-restore-restore-module").then(__webpack_require__.bind(null, /*! ./util/restore/restore.module */ "./src/app/util/restore/restore.module.ts")).then(m => m.RestoreModule) },
-    { path: 'importar-palistas', loadChildren: () => Promise.all(/*! import() | util-importar-palistas-importar-palistas-module */[__webpack_require__.e("common"), __webpack_require__.e("util-importar-palistas-importar-palistas-module")]).then(__webpack_require__.bind(null, /*! ./util/importar-palistas/importar-palistas.module */ "./src/app/util/importar-palistas/importar-palistas.module.ts")).then(m => m.ImportarPalistasModule) }
-    // { path: '**', component: NotFoundComponent }
-    //{ path: '', redirectTo: '/', pathMatch: 'full' }
+    { path: 'consola', loadChildren: () => __webpack_require__.e(/*! import() | procedures-consola-consola-module */ "procedures-consola-consola-module").then(__webpack_require__.bind(null, /*! ./procedures/consola/consola.module */ "./src/app/procedures/consola/consola.module.ts")).then(m => m.ConsolaModule) },
+    { path: 'inicializar-competencia', loadChildren: () => __webpack_require__.e(/*! import() | competencias-inicializar-competencia-inicializar-competencia-module */ "competencias-inicializar-competencia-inicializar-competencia-module").then(__webpack_require__.bind(null, /*! ./competencias/inicializar-competencia/inicializar-competencia.module */ "./src/app/competencias/inicializar-competencia/inicializar-competencia.module.ts")).then(m => m.InicializarCompetenciaModule) },
+    { path: 'importar-inscripciones', loadChildren: () => __webpack_require__.e(/*! import() | competencias-importar-inscripciones-importar-inscripciones-module */ "competencias-importar-inscripciones-importar-inscripciones-module").then(__webpack_require__.bind(null, /*! ./competencias/importar-inscripciones/importar-inscripciones.module */ "./src/app/competencias/importar-inscripciones/importar-inscripciones.module.ts")).then(m => m.ImportarInscripcionesModule) },
+    { path: 'generar-series', loadChildren: () => Promise.all(/*! import() | competencias-generar-series-generar-series-module */[__webpack_require__.e("common"), __webpack_require__.e("competencias-generar-series-generar-series-module")]).then(__webpack_require__.bind(null, /*! ./competencias/generar-series/generar-series.module */ "./src/app/competencias/generar-series/generar-series.module.ts")).then(m => m.GenerarSeriesModule) },
+    { path: 'editar-serie', loadChildren: () => Promise.all(/*! import() | competencias-editar-serie-editar-serie-module */[__webpack_require__.e("common"), __webpack_require__.e("competencias-editar-serie-editar-serie-module")]).then(__webpack_require__.bind(null, /*! ./competencias/editar-serie/editar-serie.module */ "./src/app/competencias/editar-serie/editar-serie.module.ts")).then(m => m.EditarSerieModule) },
+    { path: 'util', loadChildren: () => Promise.all(/*! import() | util-util-module */[__webpack_require__.e("common"), __webpack_require__.e("util-util-module")]).then(__webpack_require__.bind(null, /*! ./util/util.module */ "./src/app/util/util.module.ts")).then(m => m.UtilModule) },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -511,6 +532,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./core/core.module */ "./src/app/core/core.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
+
 
 
 
@@ -532,7 +555,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
             _angular_fire__WEBPACK_IMPORTED_MODULE_3__["AngularFireModule"].initializeApp(src_environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"].firebaseConfig),
             _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestoreModule"], _angular_fire_auth__WEBPACK_IMPORTED_MODULE_5__["AngularFireAuthModule"],
-            _core_core_module__WEBPACK_IMPORTED_MODULE_8__["CoreModule"]
+            _core_core_module__WEBPACK_IMPORTED_MODULE_8__["CoreModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__["BrowserAnimationsModule"]
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
@@ -568,6 +592,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./home/home.component */ "./src/app/core/home/home.component.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./login/login.component */ "./src/app/core/login/login.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _login_redireccionar_login_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./login/redireccionar-login.component */ "./src/app/core/login/redireccionar-login.component.ts");
+
 
 
 
@@ -592,7 +618,7 @@ CoreModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _spinner_spinner_component__WEBPACK_IMPORTED_MODULE_6__["SpinnerComponent"], _message_message_component__WEBPACK_IMPORTED_MODULE_7__["MessageComponent"],
             _shell_shell_component__WEBPACK_IMPORTED_MODULE_8__["ShellComponent"],
             _shell_navbar_admin_component__WEBPACK_IMPORTED_MODULE_9__["NavbarAdminComponent"], _shell_navbar_inscripcion_component__WEBPACK_IMPORTED_MODULE_10__["NavbarInscripcionComponent"], _shell_navbar_competencia_component__WEBPACK_IMPORTED_MODULE_11__["NavbarCompetenciaComponent"],
-            _home_home_component__WEBPACK_IMPORTED_MODULE_12__["HomeComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_13__["LoginComponent"]
+            _home_home_component__WEBPACK_IMPORTED_MODULE_12__["HomeComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_13__["LoginComponent"], _login_redireccionar_login_component__WEBPACK_IMPORTED_MODULE_15__["RedireccionarLoginComponent"]
         ],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_14__["RouterModule"],
@@ -751,6 +777,55 @@ HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/core/login/authLocal.guard.ts":
+/*!***********************************************!*\
+  !*** ./src/app/core/login/authLocal.guard.ts ***!
+  \***********************************************/
+/*! exports provided: AuthLocalGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthLocalGuard", function() { return AuthLocalGuard; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+let AuthLocalGuard = class AuthLocalGuard {
+    constructor(router) {
+        this.router = router;
+    }
+    canActivate(next, state) {
+        if (src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].modulo !== 'Competencias') {
+            return true;
+        }
+        const usuarios = JSON.parse(localStorage.getItem('users'));
+        if (!!usuarios && !!usuarios[0].rol) {
+            return true;
+        }
+        else {
+            this.router.navigate(["redireccionar-login"]);
+            return false;
+        }
+    }
+};
+AuthLocalGuard.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+AuthLocalGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], AuthLocalGuard);
+
+
+
+/***/ }),
+
 /***/ "./src/app/core/login/login.component.ts":
 /*!***********************************************!*\
   !*** ./src/app/core/login/login.component.ts ***!
@@ -766,17 +841,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @services/auth.service */ "./src/app/services/auth.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _core_message_message_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @core/message/message.service */ "./src/app/core/message/message.service.ts");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+
 
 
 
 
 
 let LoginComponent = class LoginComponent {
-    constructor(authService, router, route, msgService) {
+    constructor(authService, router, route, msg) {
         this.authService = authService;
         this.router = router;
         this.route = route;
-        this.msgService = msgService;
+        this.msg = msg;
+        this.modulo = src_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].modulo;
         this.email = '';
         this.password = '';
         this.retornar = '';
@@ -786,8 +864,17 @@ let LoginComponent = class LoginComponent {
             .subscribe(params => this.retornar = params['retornar'] || '/home');
     }
     onLogin() {
-        this.msgService.clearMessages();
-        this.authService.login$(this.email, this.password).subscribe(() => this.router.navigate([this.retornar]), error => this.msgService.error('Error: Ocurrió un error' + error + ' verifique el email y la contraseña'));
+        this.modulo === 'Competencias' ? this.onLoginLocalStorage() : this.onLoginFirebase();
+    }
+    onLoginFirebase() {
+        this.msg.clearMessages();
+        this.authService.login$(this.email, this.password).subscribe(() => this.router.navigate([this.retornar]), error => this.msg.error('Error: Ocurrió un error' + error + ' verifique el email y la contraseña'));
+    }
+    onLoginLocalStorage() {
+        this.msg.clearMessages();
+        this.authService.loginLocal$(this.email, this.password).subscribe(() => {
+            this.router.navigate([this.retornar]);
+        }, error => this.msg.error('Error: Ocurrió un error, verifique el email y la contraseña'));
     }
 };
 LoginComponent.ctorParameters = () => [
@@ -802,6 +889,46 @@ LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/core/login/login.component.html")).default
     })
 ], LoginComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/core/login/redireccionar-login.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/core/login/redireccionar-login.component.ts ***!
+  \*************************************************************/
+/*! exports provided: RedireccionarLoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RedireccionarLoginComponent", function() { return RedireccionarLoginComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+let RedireccionarLoginComponent = class RedireccionarLoginComponent {
+    constructor(router) {
+        this.router = router;
+    }
+    ngOnInit() {
+    }
+    onSubmit() {
+        this.router.navigate(["importar-inscripciones"]);
+    }
+};
+RedireccionarLoginComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+RedireccionarLoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-redireccionar-login',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./redireccionar-login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/core/login/redireccionar-login.component.html")).default
+    })
+], RedireccionarLoginComponent);
 
 
 
@@ -937,6 +1064,19 @@ NotFoundComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/core/shell/nav-bar-inscripcion.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/core/shell/nav-bar-inscripcion.component.css ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".navbar-brand h4, .navbar-brand h6 {\r\n  -webkit-margin-after: 0;\r\n          margin-block-end: 0;\r\n}\r\n\r\nnav.navbar {\r\n  padding-top: 0.25rem;\r\n  padding-bottom: 0.25rem;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29yZS9zaGVsbC9uYXYtYmFyLWluc2NyaXBjaW9uLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSx1QkFBbUI7VUFBbkIsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0Usb0JBQW9CO0VBQ3BCLHVCQUF1QjtBQUN6QiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvc2hlbGwvbmF2LWJhci1pbnNjcmlwY2lvbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm5hdmJhci1icmFuZCBoNCwgLm5hdmJhci1icmFuZCBoNiB7XHJcbiAgbWFyZ2luLWJsb2NrLWVuZDogMDtcclxufVxyXG5cclxubmF2Lm5hdmJhciB7XHJcbiAgcGFkZGluZy10b3A6IDAuMjVyZW07XHJcbiAgcGFkZGluZy1ib3R0b206IDAuMjVyZW07XHJcbn1cclxuIl19 */");
+
+/***/ }),
+
 /***/ "./src/app/core/shell/navbar-admin.component.ts":
 /*!******************************************************!*\
   !*** ./src/app/core/shell/navbar-admin.component.ts ***!
@@ -1055,7 +1195,7 @@ NavbarInscripcionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-navbar-inscripcion',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./navbar-inscripcion.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/core/shell/navbar-inscripcion.component.html")).default,
-        styles: [""]
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./nav-bar-inscripcion.component.css */ "./src/app/core/shell/nav-bar-inscripcion.component.css")).default]
     })
 ], NavbarInscripcionComponent);
 
@@ -1271,6 +1411,15 @@ let AuthService = class AuthService {
         this.setAndSendUsuario(null);
         return this.afAuth.auth.signOut();
     }
+    loginLocal$(email, password) {
+        let usuario = null;
+        const usuarios = JSON.parse(localStorage.getItem('users'));
+        if (!!usuarios) {
+            usuario = usuarios.find(elemento => elemento.email === email && elemento.password === password);
+        }
+        this.setAndSendUsuario(usuario);
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(usuario);
+    }
     setAndSendUsuario(usuario) {
         sessionStorage.setItem('currentUser', JSON.stringify(usuario));
         this.sendUser(usuario);
@@ -1341,9 +1490,6 @@ let CrudService = class CrudService {
         }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["first"])());
     }
     getRecord$(tableName, id) {
-        if (tableName === 'competencias') {
-            console.log('get record competencia Id', id);
-        }
         return this.afs.doc(`${tableName}/${id}`).valueChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["first"])());
     }
     getRecordByField$(tableName, field, searchValue) {
@@ -1365,7 +1511,6 @@ let CrudService = class CrudService {
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["from"])(this.afs.doc(`${tableName}/${id}`).delete());
     }
     handleError(err) {
-        console.log('handleError');
         console.error(err);
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console
@@ -1411,13 +1556,12 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: true,
     firebaseConfig: {
-        apiKey: "AIzaSyBKM08A9WHEhTLXbY7CxF49gN5fl-hk8f8",
-        authDomain: "febocak-02.firebaseapp.com",
-        databaseURL: "https://febocak-02.firebaseio.com",
-        projectId: "febocak-02",
-        storageBucket: "",
-        messagingSenderId: "850669499931",
-        appId: "1:850669499931:web:53e8e8e339850d33"
+        apiKey: "AIzaSyDbLNWzHhl1dUWFohXzkv1U7ymzgAZgy68",
+        authDomain: "fobokac-01.firebaseapp.com",
+        databaseURL: "https://fobokac-01.firebaseio.com",
+        projectId: "fobokac-01",
+        storageBucket: "fobokac-01.appspot.com",
+        messagingSenderId: "1019734820364"
     },
     modulo: "Competencias"
 };
@@ -1435,19 +1579,22 @@ const environment = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 
 
 
 
 
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
+
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].production) {
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"])
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_4__["AppModule"])
     .catch(err => console.error(err));
 
 

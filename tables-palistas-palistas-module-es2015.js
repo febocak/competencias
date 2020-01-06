@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\n  <div class=\"col-sm-12 col-md-8 col-lg-6 mx-auto\">\n\n    <div class=\"card mt-3\">\n      <div class=\"card-header\" [ngClass]=\"templateData.cardHeaderStyle\">\n        {{ templateData.titulo + \" Palista\" }}\n\n      </div>\n\n      <div class=\"card-body\">\n        <form [formGroup]=\"miForm\" (ngSubmit)=\"onSubmit(submitBtn)\">\n\n          <div class=\"row\">\n            <div class=\"col col-6\">\n              <div class=\"form-group\">\n                <label for=\"nombre\" class=\"control-label\"> Nombre </label>\n                <input type=\"text\" formControlName=\"nombre\" [readonly]=\"templateData.titulo==='Eliminar'\" required maxlength=\"30\"\n                  [class.is-invalid]=\"nombre.invalid && nombre.touched\" class=\"form-control\" />\n                <small class=\"text-danger\" [class.d-none]=\"nombre.untouched || !nombre.hasError('required')\">El nombre\n                  es requerido</small>\n                <small class=\"text-danger\" [class.d-none]=\"nombre.untouched || !nombre.hasError('minlength')\">La\n                  longitud mínima es 2</small>\n              </div>\n            </div>\n\n            <div class=\"col col-6\">\n              <div class=\"form-group\">\n                <label for=\"apellido\" class=\"control-label\"> Apellido </label>\n                <input type=\"text\" formControlName=\"apellido\" [readonly]=\"templateData.titulo==='Eliminar'\" required maxlength=\"30\"\n                  [class.is-invalid]=\"apellido.invalid && apellido.touched\" class=\"form-control\" />\n                <small class=\"text-danger\" [class.d-none]=\"apellido.untouched || !apellido.hasError('required')\">El\n                  apellido es requerido</small>\n                <small class=\"text-danger\" [class.d-none]=\"apellido.untouched || !apellido.hasError('minlength')\">La\n                  longitud mínima es 2</small>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-6\">\n              <div class=\"form-group\">\n                <label for=\"DNI\" class=\"control-label\"> DNI </label>\n                <input type=\"text\" formControlName=\"dni\" [readonly]=\"templateData.titulo==='Eliminar'\" required maxlength=\"8\"\n                  [class.is-invalid]=\"dni.invalid && dni.touched\" class=\"form-control\" />\n                <small class=\"text-danger\" [class.d-none]=\"dni.untouched || !dni.hasError('required')\">El DNI es\n                  requerido</small>\n                <small class=\"text-danger\" [class.d-none]=\"dni.untouched || !dni.hasError('minlength')\">La longitud\n                  mínima es 8</small>\n              </div>\n            </div>\n\n            <div class=\"col-6\">\n              <div class=\"form-group\">\n                <label for=\"genero\" class=\"control-label\"> Genero </label>\n                <select formControlName=\"genero\" required (change)=\"buscarCategoria(fnacimiento.value, genero.value)\"\n                  [class.is-invalid]=\"genero.invalid && genero.touched\" class=\"custom-select\">\n                  <option value=\"genero\"></option>\n                  <option value=\"Masculino\">Masculino</option>\n                  <option value=\"Femenino\">Femenino</option>\n                </select>\n                <small class=\"text-danger\" [class.d-none]=\"genero.valid || genero.untouched\">El genero es\n                  requerido</small>\n                <small class=\"text-danger\"\n                  [class.d-none]=\"genero.untouched || !genero.hasError('invalidGenero')\">Seleccione el genero</small>\n              </div>\n            </div>\n\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-6\">\n              <div class=\"form-group\">\n                <label for=\"fnacimiento\" class=\"control-label\"> F. nacimiento </label>\n                <input type=\"date\" formControlName=\"fnacimiento\" [readonly]=\"templateData.titulo==='Eliminar'\" required\n                  (change)=\"buscarCategoria(fnacimiento.value, genero.value)\"\n                  [class.is-invalid]=\"fnacimiento.invalid && fnacimiento.touched\" class=\"form-control\" />\n                <small class=\"text-danger\" [class.d-none]=\"fnacimiento.valid || fnacimiento.untouched\">La fecha de\n                  nacimiento es requerida</small>\n              </div>\n            </div>\n\n            <div class=\"col-6\">\n              <div class=\"form-group\">\n                <label for=\"categoria\" class=\"control-label\"> Categoría </label>\n                <input type=\"text\" formControlName=\"categoria\" [readonly]=\"true\" required\n                  [class.is-invalid]=\"(categoria.invalid && categoria.touched)   || categoria.value == 'No se encontró'\"\n                  class=\"form-control\" />\n                <small class=\"text-danger\" [class.d-none]=\"categoria.valid || fnacimiento.untouched\">La categoría es\n                  requerida</small>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"form-group\">\n            <label for=\"club\" class=\"control-label\"> Club </label>\n            <select formControlName=\"club\" required [class.is-invalid]=\"club.invalid && club.touched\"\n              class=\"custom-select\">\n              <option value=\"club\"></option>\n              <option [value]=\"registro.nombre\" *ngFor=\"let registro of tblClubes\">{{ registro.nombre }}</option>\n            </select>\n            <small class=\"text-danger\" [class.d-none]=\"club.untouched || !club.hasError('required')\">El club es\n              requerido</small>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-6\">\n              <button [disabled]=\"!miForm.valid\" #submitBtn\n                [ngClass]=\"templateData.titulo==='Eliminar' ? 'btn-danger' : 'btn-primary'\"\n                type=\"submit\" class=\"btn btn-block\">\n                {{ templateData.titulo === 'Eliminar' ? 'Eliminar' : 'Aceptar' }}\n              </button>\n            </div>\n            <div class=\"col-6\">\n              <button type=\"button\" class=\"btn btn-secondary btn-block\" (click)=\"goBack()\">\n                Cancelar\n              </button>\n            </div>\n          </div>\n\n        </form>\n      </div>\n    </div>\n\n  </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\r\n  <div class=\"col-sm-12 col-md-8 col-lg-6 mx-auto\">\r\n\r\n    <div class=\"card mt-3\">\r\n      <div class=\"card-header\" [ngClass]=\"templateData.cardHeaderStyle\">\r\n        {{ templateData.titulo + \" Palista\" }}\r\n\r\n      </div>\r\n\r\n      <div class=\"card-body\">\r\n        <form [formGroup]=\"miForm\" (ngSubmit)=\"onSubmit(submitBtn)\">\r\n          <div class=\"row\">\r\n            <div class=\"col-2\">\r\n              <label for=\"DNI\" class=\"control-label\"> DNI </label>\r\n            </div>\r\n            <div class=\"col-4\">\r\n                <input type=\"text\" formControlName=\"dni\" [readonly]=\"templateData.titulo==='Eliminar'\" required maxlength=\"8\"\r\n                  [class.is-invalid]=\"dni.invalid && dni.touched\" class=\"form-control\" />\r\n                <small class=\"text-danger\" [class.d-none]=\"dni.untouched || !dni.hasError('required')\">El DNI es requerido</small>\r\n                <small class=\"text-danger\" [class.d-none]=\"dni.untouched || !dni.hasError('minlength')\">La longitud debe ser de 8 dígitos</small>\r\n                <small class=\"text-danger\" [class.d-none]=\"dni.untouched || !dni.hasError('pattern')\">Debe ingresar solo dígitos</small>\r\n            </div>\r\n            <div class=\"col-2\">\r\n              <label for=\"numero\" class=\"control-label\"> Nro </label>\r\n            </div>\r\n            <div class=\"col-4\">\r\n                <input type=\"text\" formControlName=\"numero\" [readonly]=\"templateData.titulo==='Eliminar'\" maxlength=\"8\"\r\n                  [class.is-invalid]=\"numero.invalid && numero.touched\" class=\"form-control\" />\r\n                <small class=\"text-danger\" [class.d-none]=\"numero.untouched || !numero.hasError('required')\">El número de federado es requerido</small>\r\n                <small class=\"text-danger\" [class.d-none]=\"numero.untouched || !numero.hasError('minlength')\">La longitud debe ser de 8 dígitos</small>\r\n                <small class=\"text-danger\" [class.d-none]=\"numero.untouched || !numero.hasError('pattern')\">Debe ingresar solo dígitos</small>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"row\">\r\n            <div class=\"col col-6\">\r\n              <div class=\"form-group\">\r\n                <label for=\"nombre\" class=\"control-label\"> Nombre </label>\r\n                <input type=\"text\" formControlName=\"nombre\" [readonly]=\"templateData.titulo==='Eliminar'\" required maxlength=\"30\"\r\n                  [class.is-invalid]=\"nombre.invalid && nombre.touched\" class=\"form-control\" />\r\n                <small class=\"text-danger\" [class.d-none]=\"nombre.untouched || !nombre.hasError('required')\">El nombre\r\n                  es requerido</small>\r\n                <small class=\"text-danger\" [class.d-none]=\"nombre.untouched || !nombre.hasError('minlength')\">La\r\n                  longitud mínima es 2</small>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col col-6\">\r\n              <div class=\"form-group\">\r\n                <label for=\"apellido\" class=\"control-label\"> Apellido </label>\r\n                <input type=\"text\" formControlName=\"apellido\" [readonly]=\"templateData.titulo==='Eliminar'\" required maxlength=\"30\"\r\n                  [class.is-invalid]=\"apellido.invalid && apellido.touched\" class=\"form-control\" />\r\n                <small class=\"text-danger\" [class.d-none]=\"apellido.untouched || !apellido.hasError('required')\">El\r\n                  apellido es requerido</small>\r\n                <small class=\"text-danger\" [class.d-none]=\"apellido.untouched || !apellido.hasError('minlength')\">La\r\n                  longitud mínima es 2</small>\r\n              </div>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"row\">\r\n\r\n            <div class=\"col-4\">\r\n              <div class=\"form-group\">\r\n                <label for=\"genero\" class=\"control-label\"> Genero </label>\r\n                <select formControlName=\"genero\" required (change)=\"buscarCategoria(fnacimiento.value, genero.value)\"\r\n                  [class.is-invalid]=\"genero.invalid && genero.touched\" class=\"custom-select\">\r\n                  <option value=\"genero\"></option>\r\n                  <option value=\"Masculino\">Masculino</option>\r\n                  <option value=\"Femenino\">Femenino</option>\r\n                </select>\r\n                <small class=\"text-danger\" [class.d-none]=\"genero.valid || genero.untouched\">El genero es\r\n                  requerido</small>\r\n                <small class=\"text-danger\"\r\n                  [class.d-none]=\"genero.untouched || !genero.hasError('invalidGenero')\">Seleccione el genero</small>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-4\">\r\n              <div class=\"form-group\">\r\n                <label for=\"fnacimiento\" class=\"control-label\"> F. nacimiento </label>\r\n                <input type=\"date\" formControlName=\"fnacimiento\" [readonly]=\"templateData.titulo==='Eliminar'\" required\r\n                  (change)=\"buscarCategoria(fnacimiento.value, genero.value)\"\r\n                  [class.is-invalid]=\"fnacimiento.invalid && fnacimiento.touched\" class=\"form-control\" />\r\n                <small class=\"text-danger\" [class.d-none]=\"fnacimiento.valid || fnacimiento.untouched\">La fecha de\r\n                  nacimiento es requerida</small>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-4\">\r\n              <div class=\"form-group\">\r\n                <label for=\"categoria\" class=\"control-label\"> Categoría </label>\r\n                <input type=\"text\" formControlName=\"categoria\" [readonly]=\"true\" required\r\n                  [class.is-invalid]=\"(categoria.invalid && categoria.touched)   || categoria.value == 'No se encontró'\"\r\n                  class=\"form-control\" />\r\n                <small class=\"text-danger\" [class.d-none]=\"categoria.valid || fnacimiento.untouched\">La categoría es\r\n                  requerida</small>\r\n              </div>\r\n            </div>\r\n\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n            <label for=\"club\" class=\"control-label\"> Club </label>\r\n            <select formControlName=\"club\" required [class.is-invalid]=\"club.invalid && club.touched\"\r\n              class=\"custom-select\">\r\n              <option [value]=\"registro.nombre\" *ngFor=\"let registro of tblClubes\">{{ registro.nombre }}</option>\r\n            </select>\r\n            <small class=\"text-danger\" [class.d-none]=\"club.untouched || !club.hasError('required')\">El club es\r\n              requerido</small>\r\n          </div>\r\n\r\n          <div class=\"row\">\r\n            <div class=\"col-6\">\r\n              <button [disabled]=\"!miForm.valid\" #submitBtn\r\n                [ngClass]=\"templateData.titulo==='Eliminar' ? 'btn-danger' : 'btn-primary'\"\r\n                type=\"submit\" class=\"btn btn-block\">\r\n                {{ templateData.titulo === 'Eliminar' ? 'Eliminar' : 'Aceptar' }}\r\n              </button>\r\n            </div>\r\n            <div class=\"col-6\">\r\n              <button type=\"button\" class=\"btn btn-secondary btn-block\" (click)=\"goBack()\">\r\n                Cancelar\r\n              </button>\r\n            </div>\r\n          </div>\r\n\r\n        </form>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>");
 
 /***/ }),
 
@@ -43,6 +43,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _core_message_message_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/message/message.service */ "./src/app/core/message/message.service.ts");
 /* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+/* harmony import */ var _services_array_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @services/array.service */ "./src/app/services/array.service.ts");
+
 
 
 
@@ -51,18 +53,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let PalistasFormComponent = class PalistasFormComponent {
-    constructor(crudService, fb, msg, location, actRoute, router) {
+    constructor(crudService, fb, msg, location, actRoute, router, arrayService) {
         this.crudService = crudService;
         this.fb = fb;
         this.msg = msg;
         this.location = location;
         this.actRoute = actRoute;
         this.router = router;
+        this.arrayService = arrayService;
         this.templateData = { titulo: '', cardHeaderStyle: '', id: '' };
     }
     ngOnInit() {
         this.msg.clearMessages();
-        this.tblClubes = this.actRoute.snapshot.data['palistaData'][1];
+        const usuario = this.actRoute.snapshot.data['palistaData'][4];
+        this.tblClubes = [{ nombre: usuario.club }];
         this.tblCategorias = this.actRoute.snapshot.data['palistaData'][2];
         const action = this.actRoute.snapshot.paramMap.get('action');
         this.templateData.titulo = this.getTitle(action);
@@ -75,7 +79,8 @@ let PalistasFormComponent = class PalistasFormComponent {
     }
     buildForm() {
         this.miForm = this.fb.group({
-            dni: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)]],
+            dni: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^\d+$/)]],
+            numero: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].maxLength(8), _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern(/^\d+$/)]],
             apellido: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(2)]],
             nombre: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(2)]],
             fnacimiento: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
@@ -83,7 +88,7 @@ let PalistasFormComponent = class PalistasFormComponent {
             categoria: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             club: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)]]
         });
-        //this.miForm.controls.club.setValue(this.usuario.club);
+        this.miForm.controls.club.setValue(this.tblClubes[0].nombre);
     }
     setFormData() {
         const record = this.actRoute.snapshot.data['palistaData'][0];
@@ -94,6 +99,9 @@ let PalistasFormComponent = class PalistasFormComponent {
     }
     get dni() {
         return this.miForm.get('dni');
+    }
+    get numero() {
+        return this.miForm.get('numero');
     }
     get apellido() {
         return this.miForm.get('apellido');
@@ -115,7 +123,11 @@ let PalistasFormComponent = class PalistasFormComponent {
     }
     onSubmit(submitBtn) {
         submitBtn.disabled = true;
-        const record = Object.assign({ id: this.templateData.id }, this.miForm.value);
+        const record = Object.assign({ id: this.templateData.id, palista: this.miForm.controls.nombre.value.trim() + ' ' + this.miForm.controls.apellido.value }, this.miForm.value);
+        if (this.templateData.titulo !== 'Eliminar' && !this.validations(record)) {
+            submitBtn.disabled = false;
+            return;
+        }
         switch (this.templateData.titulo) {
             case 'Agregar':
                 this.aceptarAgregar(record);
@@ -158,6 +170,35 @@ let PalistasFormComponent = class PalistasFormComponent {
             this.miForm.controls.categoria.setValue(categoria);
         }
     }
+    validations(record) {
+        const tabla = this.actRoute.snapshot.data['palistaData'][3];
+        const errorMessages = [];
+        errorMessages.push('Ya hay otro registro con los mismos valores para los campos nombre y apellido');
+        errorMessages.push('Ya hay otro registro con el mismo DNI');
+        const objSearch = [];
+        objSearch.push({ nombre: record.nombre, apellido: record.apellido });
+        objSearch.push({ dni: record.dni });
+        if (!!record.numero) {
+            errorMessages.push('Ya hay otro registro con el mismo Número de Federado');
+            objSearch.push({ numero: record.numero });
+        }
+        for (let i = 0; i < objSearch.length; i++) {
+            const encontro = this.arrayService.find(tabla, objSearch[i]);
+            if (!!encontro) {
+                if (this.templateData.titulo === 'Agregar') {
+                    this.msg.warning(errorMessages[i]);
+                    return false;
+                }
+                else {
+                    if (record.id !== encontro.id) {
+                        this.msg.warning(errorMessages[i]);
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 };
 PalistasFormComponent.ctorParameters = () => [
     { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_6__["CrudService"] },
@@ -165,7 +206,8 @@ PalistasFormComponent.ctorParameters = () => [
     { type: _core_message_message_service__WEBPACK_IMPORTED_MODULE_5__["MessageService"] },
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _services_array_service__WEBPACK_IMPORTED_MODULE_7__["ArrayService"] }
 ];
 PalistasFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -231,22 +273,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
 /* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @services/auth.service */ "./src/app/services/auth.service.ts");
+
 
 
 
 
 let PalistasFormResolver = class PalistasFormResolver {
-    constructor(crudService) {
+    constructor(crudService, authService) {
         this.crudService = crudService;
+        this.authService = authService;
     }
     resolve(route, state) {
         const id = route.paramMap.get('id');
-        const allData$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])(this.crudService.getRecord$('palistas', id), this.crudService.getAllRecords$('clubes', 'nombre'), this.crudService.getAllRecords$('categorias', 'desde'));
+        const currentUser = this.authService.getUser();
+        const allData$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])(this.crudService.getRecord$('palistas', id), this.crudService.getAllRecords$('clubes', 'nombre'), this.crudService.getAllRecords$('categorias', 'desde'), this.crudService.getAllRecords$('palistas'), Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(currentUser));
         return allData$;
     }
 };
 PalistasFormResolver.ctorParameters = () => [
-    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_3__["CrudService"] }
+    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_3__["CrudService"] },
+    { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] }
 ];
 PalistasFormResolver = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -271,20 +318,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
+
 
 
 
 let PalistasResolver = class PalistasResolver {
-    constructor(crudService) {
+    constructor(crudService, authService) {
         this.crudService = crudService;
+        this.authService = authService;
     }
     resolve(route, state) {
-        console.log('Palistas resolver');
-        return this.crudService.getAllRecords$('palistas', 'palista');
+        const currentUser = this.authService.getUser();
+        return this.crudService.getAllRecords$('palistas', 'dni').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(data => data.filter(palista => palista.club === currentUser.club)));
     }
 };
 PalistasResolver.ctorParameters = () => [
-    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_2__["CrudService"] }
+    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_2__["CrudService"] },
+    { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] }
 ];
 PalistasResolver = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({

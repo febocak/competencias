@@ -138,7 +138,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_message_message_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/message/message.service */ "./src/app/core/message/message.service.ts");
 /* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var _shared_compare_validator_directive__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../shared/compare-validator.directive */ "./src/app/shared/compare-validator.directive.ts");
+/* harmony import */ var _services_array_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @services/array.service */ "./src/app/services/array.service.ts");
+/* harmony import */ var _shared_compare_validator_directive__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../shared/compare-validator.directive */ "./src/app/shared/compare-validator.directive.ts");
+
 
 
 
@@ -149,7 +151,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let UsuariosFormComponent = class UsuariosFormComponent {
-    constructor(crudService, authService, fb, msg, location, actRoute, router) {
+    constructor(crudService, authService, fb, msg, location, actRoute, router, arrayService) {
         this.crudService = crudService;
         this.authService = authService;
         this.fb = fb;
@@ -157,6 +159,7 @@ let UsuariosFormComponent = class UsuariosFormComponent {
         this.location = location;
         this.actRoute = actRoute;
         this.router = router;
+        this.arrayService = arrayService;
         this.templateData = { titulo: '', cardHeaderStyle: '', id: '' };
     }
     ngOnInit() {
@@ -178,7 +181,7 @@ let UsuariosFormComponent = class UsuariosFormComponent {
             rol: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             club: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required]],
             password: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(6)]],
-            password2: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(6), Object(_shared_compare_validator_directive__WEBPACK_IMPORTED_MODULE_8__["compareValidator"])('password')]]
+            password2: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(6), Object(_shared_compare_validator_directive__WEBPACK_IMPORTED_MODULE_9__["compareValidator"])('password')]]
         });
         if (this.templateData.titulo !== 'Agregar') {
             this.miForm.removeControl('password');
@@ -214,6 +217,10 @@ let UsuariosFormComponent = class UsuariosFormComponent {
     onSubmit(submitBtn) {
         submitBtn.disabled = true;
         const record = Object.assign({ id: this.templateData.id }, this.miForm.value);
+        if (this.templateData.titulo !== 'Eliminar' && !this.validations(record)) {
+            submitBtn.disabled = false;
+            return;
+        }
         switch (this.templateData.titulo) {
             case 'Agregar':
                 this.aceptarAgregar(record);
@@ -248,6 +255,31 @@ let UsuariosFormComponent = class UsuariosFormComponent {
         const objStyle = { add: 'bg-primary', edit: 'bg-warning', delete: 'bg-danger' };
         return objStyle[action];
     }
+    validations(record) {
+        const tabla = this.actRoute.snapshot.data['usuarioData'][2];
+        const errorMessages = [];
+        errorMessages.push('Ya hay otro registro con este email');
+        errorMessages.push('Ya hay otro registro con este nombre');
+        const objSearch = [];
+        objSearch.push({ email: record.email });
+        objSearch.push({ name: record.name });
+        for (let i = 0; i < objSearch.length; i++) {
+            const encontro = this.arrayService.find(tabla, objSearch[i]);
+            if (!!encontro) {
+                if (this.templateData.titulo === 'Agregar') {
+                    this.msg.warning(errorMessages[i]);
+                    return false;
+                }
+                else {
+                    if (record.id !== encontro.id) {
+                        this.msg.warning(errorMessages[i]);
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 };
 UsuariosFormComponent.ctorParameters = () => [
     { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_6__["CrudService"] },
@@ -256,7 +288,8 @@ UsuariosFormComponent.ctorParameters = () => [
     { type: _core_message_message_service__WEBPACK_IMPORTED_MODULE_5__["MessageService"] },
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _services_array_service__WEBPACK_IMPORTED_MODULE_8__["ArrayService"] }
 ];
 UsuariosFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -333,7 +366,7 @@ let UsuariosFormResolver = class UsuariosFormResolver {
     }
     resolve(route, state) {
         const id = route.paramMap.get('id');
-        const allData$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])(this.crudService.getRecord$('users', id), this.crudService.getAllRecords$('clubes', 'nombre'));
+        const allData$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])(this.crudService.getRecord$('users', id), this.crudService.getAllRecords$('clubes', 'nombre'), this.crudService.getAllRecords$('users', 'name'));
         return allData$;
     }
 };

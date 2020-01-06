@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\n  <div class=\"col-sm-12 col-md-8 col-lg-6 mx-auto\">\n\n    <div class=\"card mt-3\">\n      <div class=\"card-header\" [ngClass]=\"templateData.cardHeaderStyle\">\n        {{ templateData.titulo + \" club\" }}\n      </div>\n\n      <div class=\"card-body\">\n        <form [formGroup]=\"miForm\" (ngSubmit)=\"onSubmit(submitBtn)\">\n\n          <div class=\"form-group\">\n            <label for=\"nombre\" class=\"control-label\"> Nombre </label>\n            <input type=\"text\" formControlName=\"nombre\" [readonly]=\"templateData.titulo==='Eliminar'\"\n              [class.is-invalid]=\"nombre.invalid && nombre.touched\" class=\"form-control\" />\n            <small class=\"text-danger\" [class.d-none]=\"nombre.untouched || !nombre.hasError('required')\">El nombre es requerido</small>\n            <small class=\"text-danger\" [class.d-none]=\"nombre.untouched || !nombre.hasError('minlength')\">La longitud mínima es 2</small>\n          </div>\n\n\n          <div class=\"form-group\">\n            <label for=\"descripcion\" class=\"control-label\"> Descripción </label>\n            <input type=\"text\" formControlName=\"descripcion\" maxlength=\"80\" [readonly]=\"templateData.titulo==='Eliminar'\"\n              [class.is-invalid]=\"descripcion.invalid && descripcion.touched\" class=\"form-control\" />\n            <small class=\"text-danger\" [class.d-none]=\"descripcion.untouched || !descripcion.hasError('required')\">La descripción es requerida</small>\n            <small class=\"text-danger\" [class.d-none]=\"descripcion.untouched || !descripcion.hasError('minlength')\">La longitud mínima es 2</small>\n          </div>\n\n          <div class=\"form-group\">\n            <label for=\"delegado\" class=\"control-label\"> Delegado </label>\n            <input type=\"text\" formControlName=\"delegado\" maxlength=\"80\" [readonly]=\"templateData.titulo==='Eliminar'\"\n              [class.is-invalid]=\"delegado.invalid && delegado.touched\" class=\"form-control\" />\n            <small class=\"text-danger\" [class.d-none]=\"delegado.untouched || !delegado.hasError('required')\">El delegado es requerido</small>\n            <small class=\"text-danger\" [class.d-none]=\"delegado.untouched || !delegado.hasError('minlength')\">La longitud mínima es 2</small>\n          </div>\n\n          <div class=\"form-group\">\n            <label for=\"entrenador\" class=\"control-label\"> Entrenador </label>\n            <input type=\"text\" formControlName=\"entrenador\" maxlength=\"80\" [readonly]=\"templateData.titulo==='Eliminar'\"\n              [class.is-invalid]=\"entrenador.invalid && entrenador.touched\" class=\"form-control\" />\n            <small class=\"text-danger\" [class.d-none]=\"entrenador.untouched || !entrenador.hasError('required')\">El entrenador es requerido</small>\n            <small class=\"text-danger\" [class.d-none]=\"entrenador.untouched || !entrenador.hasError('minlength')\">La longitud mínima es 2</small>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-6\">\n              <button [disabled]=\"!miForm.valid\" #submitBtn\n                [ngClass]=\"templateData.titulo==='Eliminar' ? 'btn-danger' : 'btn-primary'\"\n                type=\"submit\" class=\"btn btn-block\">\n                {{ templateData.titulo === 'Eliminar' ? 'Eliminar' : 'Aceptar' }}\n              </button>\n            </div>\n            <div class=\"col-6\">\n              <button type=\"button\" class=\"btn btn-secondary btn-block\" (click)=\"goBack()\">\n                Cancelar\n              </button>\n            </div>\n          </div>\n\n        </form>\n\n      </div>\n    </div>\n\n  </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\n  <div class=\"col-sm-12 col-md-8 col-lg-6 mx-auto\">\n\n    <div class=\"card mt-3\">\n      <div class=\"card-header\" [ngClass]=\"templateData.cardHeaderStyle\">\n        {{ templateData.titulo + \" club\" }}\n      </div>\n\n      <div class=\"card-body\">\n        <form [formGroup]=\"miForm\" (ngSubmit)=\"onSubmit(submitBtn)\">\n\n          <div class=\"form-group row mr-1\">\n            <label for=\"nombre\" class=\"control-label col-3\"> Nombre </label>\n            <input type=\"text\" formControlName=\"nombre\" [readonly]=\"templateData.titulo==='Eliminar'\"\n              [class.is-invalid]=\"nombre.invalid && nombre.touched\" class=\"form-control col-9\" />\n            <small class=\"text-danger\" [class.d-none]=\"nombre.untouched || !nombre.hasError('required')\">El nombre es requerido</small>\n            <small class=\"text-danger\" [class.d-none]=\"nombre.untouched || !nombre.hasError('minlength')\">La longitud mínima es 2</small>\n          </div>\n\n\n          <div class=\"form-group row mr-1\">\n            <label for=\"descripcion\" class=\"control-label col-3\"> Descripción </label>\n            <input type=\"text\" formControlName=\"descripcion\" maxlength=\"80\" [readonly]=\"templateData.titulo==='Eliminar'\"\n              [class.is-invalid]=\"descripcion.invalid && descripcion.touched\" class=\"form-control col-9\" />\n            <small class=\"text-danger\" [class.d-none]=\"descripcion.untouched || !descripcion.hasError('required')\">La descripción es requerida</small>\n            <small class=\"text-danger\" [class.d-none]=\"descripcion.untouched || !descripcion.hasError('minlength')\">La longitud mínima es 2</small>\n          </div>\n\n          <div class=\"form-group row mr-1\">\n            <label for=\"direccion\" class=\"control-label col-3\"> Dirección </label>\n            <input type=\"text\" formControlName=\"direccion\" maxlength=\"80\" [readonly]=\"templateData.titulo==='Eliminar'\"\n              [class.is-invalid]=\"direccion.invalid && direccion.touched\" class=\"form-control col-9\" />\n            <small class=\"text-danger\" [class.d-none]=\"direccion.untouched || !direccion.hasError('required')\">La Dirección es requerida</small>\n            <small class=\"text-danger\" [class.d-none]=\"direccion.untouched || !direccion.hasError('minlength')\">La longitud mínima es 2</small>\n          </div>\n\n          <div class=\"form-group row mr-1\">\n            <label for=\"telefono\" class=\"control-label col-3\"> Teléfonos </label>\n            <input type=\"text\" formControlName=\"telefono\" maxlength=\"80\" [readonly]=\"templateData.titulo==='Eliminar'\"\n              [class.is-invalid]=\"telefono.invalid && telefono.touched\" class=\"form-control col-9\" />\n            <small class=\"text-danger\" [class.d-none]=\"telefono.untouched || !telefono.hasError('required')\">El teléfono es requerido</small>\n            <small class=\"text-danger\" [class.d-none]=\"telefono.untouched || !telefono.hasError('minlength')\">La longitud mínima es 2</small>\n          </div>\n\n          <div class=\"form-group row mr-1\">\n            <label for=\"email\" class=\"control-label col-3\"> Email </label>\n            <input type=\"email\" formControlName=\"email\" maxlength=\"80\" [readonly]=\"templateData.titulo==='Eliminar'\"\n              [class.is-invalid]=\"email.invalid && email.touched\" class=\"form-control col-9\" />\n            <small class=\"text-danger\" [class.d-none]=\"email.untouched || !email.hasError('required')\">El email es requerido</small>\n            <small class=\"text-danger\" [class.d-none]=\"email.untouched || !email.hasError('minlength')\">La longitud mínima es 2</small>\n          </div>\n\n          <div class=\"form-group row mr-1\">\n            <label for=\"delegado\" class=\"control-label col-3\"> Delegado </label>\n            <input type=\"text\" formControlName=\"delegado\" maxlength=\"80\" [readonly]=\"templateData.titulo==='Eliminar'\"\n              [class.is-invalid]=\"delegado.invalid && delegado.touched\" class=\"form-control col-9\" />\n            <small class=\"text-danger\" [class.d-none]=\"delegado.untouched || !delegado.hasError('required')\">El delegado es requerido</small>\n            <small class=\"text-danger\" [class.d-none]=\"delegado.untouched || !delegado.hasError('minlength')\">La longitud mínima es 2</small>\n          </div>\n\n          <div class=\"form-group row mr-1\">\n            <label for=\"entrenador\" class=\"control-label col-3\"> Entrenador </label>\n            <input type=\"text\" formControlName=\"entrenador\" maxlength=\"80\" [readonly]=\"templateData.titulo==='Eliminar'\"\n              [class.is-invalid]=\"entrenador.invalid && entrenador.touched\" class=\"form-control col-9\" />\n            <small class=\"text-danger\" [class.d-none]=\"entrenador.untouched || !entrenador.hasError('required')\">El entrenador es requerido</small>\n            <small class=\"text-danger\" [class.d-none]=\"entrenador.untouched || !entrenador.hasError('minlength')\">La longitud mínima es 2</small>\n          </div>\n\n          <div class=\"row\">\n            <div class=\"col-6\">\n              <button [disabled]=\"!miForm.valid\" #submitBtn\n                [ngClass]=\"templateData.titulo==='Eliminar' ? 'btn-danger' : 'btn-primary'\"\n                type=\"submit\" class=\"btn btn-block\">\n                {{ templateData.titulo === 'Eliminar' ? 'Eliminar' : 'Aceptar' }}\n              </button>\n            </div>\n            <div class=\"col-6\">\n              <button type=\"button\" class=\"btn btn-secondary btn-block\" (click)=\"goBack()\">\n                Cancelar\n              </button>\n            </div>\n          </div>\n\n        </form>\n\n      </div>\n    </div>\n\n  </div>\n</div>");
 
 /***/ }),
 
@@ -38,7 +38,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClubesFormResolver", function() { return ClubesFormResolver; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+
 
 
 
@@ -48,11 +50,12 @@ let ClubesFormResolver = class ClubesFormResolver {
     }
     resolve(route, state) {
         const id = route.paramMap.get('id');
-        return this.crudService.getRecord$('clubes', id);
+        const allData$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])(this.crudService.getRecord$('clubes', id), this.crudService.getAllRecords$('clubes'));
+        return allData$;
     }
 };
 ClubesFormResolver.ctorParameters = () => [
-    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_2__["CrudService"] }
+    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_3__["CrudService"] }
 ];
 ClubesFormResolver = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -200,6 +203,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _core_message_message_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @core/message/message.service */ "./src/app/core/message/message.service.ts");
 /* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
+/* harmony import */ var _services_array_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @services/array.service */ "./src/app/services/array.service.ts");
+
 
 
 
@@ -208,13 +213,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ClubesFormComponent = class ClubesFormComponent {
-    constructor(crudService, fb, msg, location, actRoute, router) {
+    constructor(crudService, fb, msg, location, actRoute, router, arrayService) {
         this.crudService = crudService;
         this.fb = fb;
         this.msg = msg;
         this.location = location;
         this.actRoute = actRoute;
         this.router = router;
+        this.arrayService = arrayService;
         this.templateData = { titulo: '', cardHeaderStyle: '', id: '' };
     }
     ngOnInit() {
@@ -232,18 +238,30 @@ let ClubesFormComponent = class ClubesFormComponent {
         this.miForm = this.fb.group({
             nombre: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)]],
             descripcion: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)]],
+            direccion: [''],
+            telefono: [''],
+            email: [''],
             delegado: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)]],
             entrenador: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(3)]]
         });
     }
     setFormData() {
-        this.miForm.patchValue(this.actRoute.snapshot.data['clubData']);
+        this.miForm.patchValue(this.actRoute.snapshot.data['clubData'][0]);
     }
     get nombre() {
         return this.miForm.get('nombre');
     }
     get descripcion() {
         return this.miForm.get('descripcion');
+    }
+    get direccion() {
+        return this.miForm.get('direccion');
+    }
+    get telefono() {
+        return this.miForm.get('telefono');
+    }
+    get email() {
+        return this.miForm.get('email');
     }
     get delegado() {
         return this.miForm.get('delegado');
@@ -254,6 +272,10 @@ let ClubesFormComponent = class ClubesFormComponent {
     onSubmit(submitBtn) {
         submitBtn.disabled = true;
         const record = Object.assign({ id: this.templateData.id }, this.miForm.value);
+        if (this.templateData.titulo !== 'Eliminar' && !this.validations(record)) {
+            submitBtn.disabled = false;
+            return;
+        }
         switch (this.templateData.titulo) {
             case 'Agregar':
                 this.aceptarAgregar(record);
@@ -286,6 +308,29 @@ let ClubesFormComponent = class ClubesFormComponent {
         const objStyle = { add: 'bg-primary', edit: 'bg-warning', delete: 'bg-danger' };
         return objStyle[action];
     }
+    validations(record) {
+        const tabla = this.actRoute.snapshot.data['clubData'][1];
+        const errorMessages = [];
+        errorMessages.push('Ya hay otro registro con el mismo valor para el campo nombre');
+        const objSearch = [];
+        objSearch.push({ nombre: record.nombre });
+        for (let i = 0; i < objSearch.length; i++) {
+            const encontro = this.arrayService.find(tabla, objSearch[i]);
+            if (!!encontro) {
+                if (this.templateData.titulo === 'Agregar') {
+                    this.msg.warning(errorMessages[i]);
+                    return false;
+                }
+                else {
+                    if (record.id !== encontro.id) {
+                        this.msg.warning(errorMessages[i]);
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 };
 ClubesFormComponent.ctorParameters = () => [
     { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_6__["CrudService"] },
@@ -293,7 +338,8 @@ ClubesFormComponent.ctorParameters = () => [
     { type: _core_message_message_service__WEBPACK_IMPORTED_MODULE_5__["MessageService"] },
     { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["Location"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _services_array_service__WEBPACK_IMPORTED_MODULE_7__["ArrayService"] }
 ];
 ClubesFormComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

@@ -135,7 +135,6 @@ let InscripcionesFormComponent = class InscripcionesFormComponent {
         }
     }
     aceptarAgregar(record) {
-        console.log('TCL: InscripcionesFormComponent -> aceptarAgregar -> record', record);
         this.crudService.addRecord$('inscripciones', record).subscribe(_ => this.msg.ok(record.nombre.trim() + ' ' + record.apellido + ' Agregado satisfactoriamente'), error => this.msg.error('Error al agregar los datos: ' + error.statusText), () => this.router.navigate(['inscripciones']));
     }
     aceptarEditar(record) {
@@ -175,7 +174,7 @@ let InscripcionesFormComponent = class InscripcionesFormComponent {
         }
     }
     distanciasDeLaCategoria(categoria) {
-        let todasLasDistancias = this.actRoute.snapshot.data['inscripcionData'][5].distancia;
+        let todasLasDistancias = this.actRoute.snapshot.data['inscripcionData'][5];
         return todasLasDistancias.filter(data => data.categoria === categoria);
     }
 };
@@ -225,6 +224,7 @@ let InscripcionesComponent = class InscripcionesComponent {
     }
     ngOnInit() {
         this.tabla = this.route.snapshot.data['inscripcionData'];
+        console.table(this.tabla);
     }
 };
 InscripcionesComponent.ctorParameters = () => [
@@ -256,6 +256,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @services/auth.service */ "./src/app/services/auth.service.ts");
 /* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @services/crud.service */ "./src/app/services/crud.service.ts");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
 
 
 
@@ -267,11 +269,10 @@ let InscripcionesFormResolver = class InscripcionesFormResolver {
         this.authService = authService;
     }
     resolve(route, state) {
-        //TODO: el ID de competencia está fijo. Colocar el que corresponda
-        const competencia = this.crudService.getRecord$('consola', '01');
+        const distancias$ = this.crudService.getRecord$('consola', '01').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(data => data.idCompetencia.trim()), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["mergeMap"])(idCompetencia => this.crudService.getRecord$('competencias', idCompetencia)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(competencia => competencia.distancia));
         const club = this.authService.getUser().club;
         const id = route.paramMap.get('id');
-        const allData$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["forkJoin"])(this.crudService.getRecord$('inscripciones', id), this.crudService.getAllRecords$('clubes', 'nombre'), this.crudService.getAllRecords$('categorias', 'desde'), this.crudService.queryByField$('palistas', 'club', club), this.crudService.queryByField$('inscripciones', 'club', club), this.crudService.getRecord$('competencias', 'lJBIk7KClZmifrIrSysT'));
+        const allData$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_4__["forkJoin"])(this.crudService.getRecord$('inscripciones', id), this.crudService.getAllRecords$('clubes', 'nombre'), this.crudService.getAllRecords$('categorias', 'desde'), this.crudService.queryByField$('palistas', 'club', club), this.crudService.queryByField$('inscripciones', 'club', club), distancias$);
         return allData$;
     }
 };
