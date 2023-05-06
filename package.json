@@ -37,7 +37,7 @@
     "firebase": "^6.5.0",
     "font-awesome": "^4.7.0",
     "grpc": "^1.23.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.15.0",
     "print-js": "^1.0.61",
     "rxjs": "~6.4.0",
